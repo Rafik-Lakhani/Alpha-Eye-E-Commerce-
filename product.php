@@ -32,9 +32,9 @@
             <div class="product-image">
                 <img id="main-img"   src="assets/images/<?php echo $product['img1']?>" alt="Product 1">
                 <div class="sub-img">
-                    <img src="assets/images/<?php echo $product['img2']?>" alt="Product 1">
-                    <img src="assets/images/<?php echo $product['img3']?>" alt="Product 1">    
-                    <img src="assets/images/<?php echo $product['img4']?>" alt="Product 1">
+                    <img src="assets/images/<?php echo $product['img2']?>" alt="Product 1" id="subimg1" onclick="changeimg(1)">
+                    <img src="assets/images/<?php echo $product['img3']?>" alt="Product 2" id="subimg2" onclick="changeimg(2)">    
+                    <img src="assets/images/<?php echo $product['img4']?>" alt="Product 3" id="subimg3" onclick="changeimg(3)">
                 </div>
             </div>
             <div class="product-description">
@@ -75,5 +75,14 @@
         </div>
         <!-- <?php include("component/footer.php");?>  Include footer -->
     </div>
+    <script>
+        var mainimg= document.querySelector('#main-img');
+        
+        function changeimg(imgno){
+            var srcurl=mainimg.src;
+            mainimg.src=document.querySelector(`#subimg${imgno}`).src;
+            document.querySelector(`#subimg${imgno}`).src=srcurl;
+        }
+    </script>
 </body>
 </html>
