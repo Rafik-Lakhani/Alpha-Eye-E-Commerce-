@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cssStyle/style.css">
     <?php include("config/remixicone.php")?>
     <?php include("config/fontfamily.php")?>
+    <?php include("config/dbconnect.php") ?>
     <title>Alpha Eye | Make your lock stylist</title>
 </head>
 <body>
-    <script src="script.js"></script>
+
     <div class="main">
         <?php include("component/nav.php"); ?>
         <div class="hero">
@@ -42,45 +43,36 @@
                 <a href="#"><button>See All</button></a>
             </div>
             <div class="card-div">
-                <div class="card">
-                    <img src="assets/staticimg/logo.jpg" alt="">
-                    <div class="detail-sec">
-                        <div class="name-div">
-                            <h3>demo name</h3>
-                            <h5>category Name</h5>
-                            <h3>₹1000</h3>
-                        </div>
-                        <div class="btn-div">
-                            <a href="#"><button><i class="ri-shopping-cart-line"></i></button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/staticimg/logo.jpg" alt="">
-                    <div class="detail-sec">
-                        <div class="name-div">
-                            <h3>demo name</h3>
-                            <h5>category Name</h5>
-                            <h3>₹1000</h3>
-                        </div>
-                        <div class="btn-div">
-                            <a href="#"><button><i class="ri-shopping-cart-line"></i></button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="assets/staticimg/logo.jpg" alt="">
-                    <div class="detail-sec">
-                        <div class="name-div">
-                            <h3>demo name</h3>
-                            <h5>category Name</h5>
-                            <h3>₹1000</h3>
-                        </div>
-                        <div class="btn-div">
-                            <a href="#"><button><i class="ri-shopping-cart-line"></i></button></a>
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                    $select ="SELECT * FROM product WHERE addingdate >= DATE_SUB(CURRENT_DATE, INTERVAL 1 MONTH)";
+                    $result1 = mysqli_query($con, $select);
+                    $name="";
+                    while($row = mysqli_fetch_assoc($result1)){
+                        if($name==$row["name"]){
+                            continue;
+                        }
+                        else{
+                            $name=$row["name"];
+                    ?>
+                                <div class="card">
+                                    <a href="product.php?pid=<?php echo $row["productid"]; ?>">
+                                    <img src="assets/images/<?php echo $row["img1"]; ?>" alt="main image">
+                                    </a>
+                                    <div class="detail-sec">
+                                        <div class="name-div">
+                                            <h3><?php echo $row["name"]; ?></h3>
+                                            <h5><?php echo $row["subcategory"]; ?></h5>
+                                            <h3>₹<?php echo $row["sellingprice"]; ?></h3>
+                                        </div>
+                                        <div class="btn-div">
+                                            <a href="#"><button><i class="ri-shopping-cart-line"></i></button></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                       
+                    <?php
+                    }}?>
             </div>
         </div>
         <div class="img-div">
@@ -118,5 +110,6 @@
         </div>
     
     </div>
+    <script src="jsScript/script.js"></script>
 </body>
 </html>

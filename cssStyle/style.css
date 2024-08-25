@@ -115,7 +115,7 @@ box-shadow:  10px 10px 50px #95a8e0cc,
     justify-content: center;
     padding-top: 50px;
     gap: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 
 .heading{
@@ -163,9 +163,10 @@ box-shadow:  10px 10px 50px #95a8e0cc,
     box-shadow: 3px 3px 40px #00000067;
 }
 
-.card img{
+.card a img{
     height: 270px;
     width: 100%;
+    object-fit: cover;
     /* -webkit-animation-fill-mode:both; */
 }
 
@@ -188,6 +189,7 @@ box-shadow:  10px 10px 50px #95a8e0cc,
     flex-direction: column;
     gap: 5px;
     width: 80%;
+    max-width: 80%;
     /* overflow: hidden; */
     /* align-items: center; */
     /* justify-content: space-between; */

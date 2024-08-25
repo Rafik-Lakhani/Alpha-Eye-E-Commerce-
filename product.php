@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="cssStyle/product.css">
     <title>Product | AlphaEye</title>
 </head>
 <body>

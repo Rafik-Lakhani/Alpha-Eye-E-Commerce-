@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="singup.css">
+<link rel="stylesheet" href="cssStyle/singup.css">
 <?php include("component/nav.php");?>
 <?php include("config/remixicone.php");?>
 <?php include("config/fontfamily.php")?>

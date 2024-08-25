@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="singin.css">
+<link rel="stylesheet" href="cssStyle/singin.css">
 <?php include("component/nav.php");?>
 <?php include("config/remixicone.php");?>
 <?php include("config/fontfamily.php");
