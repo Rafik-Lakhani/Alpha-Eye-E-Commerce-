@@ -12,10 +12,10 @@
             </div>
             <div class="center-nav">
                 <ol class="list">
-                    <li>Home</li>
-                    <li>Categories</li>
-                    <li>All product</li>
-                    <li>Conect US</li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="#">Category</a></li>
+                    <li><a href="viewproduct.php">Product</a></li>
+                    <li><a href="contect.php">ContectUs</a></li>
                 </ol>
             </div>
             <div class="right-nav">

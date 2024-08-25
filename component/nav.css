@@ -57,6 +57,12 @@ nav{
     font-size: 1.05rem;
     list-style: none;
 }
+.center-nav ol li a{
+    font-size: 1.05rem;
+    list-style: none;
+    text-decoration: none;
+    color:black;
+}
 
 .right-nav{
     width: 15%;
