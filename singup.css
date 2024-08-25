@@ -1,0 +1,117 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  color: #424874;
+  background: linear-gradient(to bottom right, #f4eeff, #dcd6f7);
+  font-family: "Poppins", sans-serif;
+}
+
+.login-container {
+  display: flex;
+  min-height: 92%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.login-div {
+  border: 2px solid #424874;
+  width: 30%;
+  border-radius: 40px;
+  padding: 30px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.login-div form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 90%;
+  font-size: 1.15rem;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.login-div input {
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #424874;
+  border-color: #424874;
+}
+
+.heading {
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+
+.Email {
+  padding-top: 7px;
+}
+
+.pass{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 7px;
+}
+
+.password input {
+  width: 100%;
+
+}
+#password-eye{
+  position: absolute;
+  top: 38px;
+  right:10px;
+  font-size: 1.15rem;
+}
+
+.con-pass{
+  padding-top: 7px;
+}
+
+#sub{
+  margin-top: 40px;
+  color: white;
+  background-color: #424874;
+  font-size: 1.1rem;
+}
+
+h3{
+  margin-top: 10px;
+  font-size: 1.0rem;
+}
+h3 a{
+  text-decoration: none;
+  color: black;
+}
+
+
+#close-icon{
+  position: absolute;
+  top: 10px;
+  font-size: 1.8rem;
+  right: 15px;
+  text-decoration: none;
+  color: #424874;
+}
+
+#close-icon:hover{
+  color: white;
+  background-color: #424874;
+  border-radius: 20px;
+}

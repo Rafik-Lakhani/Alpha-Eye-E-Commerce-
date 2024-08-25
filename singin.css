@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+    color: #424874;
+    background: linear-gradient(
+        to bottom right,#F4EEFF,#DCD6F7);
+    font-family: "Poppins", sans-serif;
+}
+
+
+.login-container{
+    display: flex;
+    min-height: 92%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.login-div{
+    border: 2px solid #424874;
+    width: 30%;
+    border-radius:40px;
+    padding: 30px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.login-div form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+    font-size: 1.15rem;
+    padding: 10px;
+    font-weight: 500;
+}
+.login-div form input{
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #424874;
+    border-color: #424874;
+}
+
+.heading{
+    margin-bottom:10px;
+    font-weight: 700;
+}
+
+.password{
+    margin-top: 10px;
+}
+
+.pw-div{
+    display: flex;
+    position: relative;
+}
+.pw-div input{
+    width: 100%;
+}
+
+#pw-eye{
+    position: absolute;
+    top:3px;
+    right: 5px;
+    font-size: 1.15rem;
+}
+
+.msg-div{
+    display: flex;
+    justify-content: space-between;
+    padding:5px 5px;
+    margin-bottom: 25px;
+}
+
+.msg-div h4 a{
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #424874;
+}
+
+
+#login-sub{
+    padding: 5px;
+    background-color: #424874;
+    color: #fff;
+    font-size: 1.06rem;
+}
+
+form #signup{
+    color: #424874;
+    font-size: 1rem;
+    margin: auto;
+    margin-top: 10px;
+}
+
+form #signup a{
+    text-decoration: none;
+    color: black;
+}
+
+.close-icon{
+    position: absolute;
+    top: 10px;
+    font-size: 1.8rem;
+    right: 15px;
+    text-decoration: none;
+    color: #424874;
+}
+
+.close-icon:hover{
+    color: white;
+    background-color: #424874;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
