@@ -55,7 +55,7 @@
                             $result2=mysqli_query($con,$quary);
                             while($row=mysqli_fetch_assoc($result2)){
                                 ?>
-                                 <a href="product.php?pid=<?php echo $row['productid'];?>"><div class="color-box" style="background-color:<?php echo $row['color'];?>"></div></a>
+                                 <a href="product.php?name=<?php echo $row['name'] ?>&pid=<?php echo $row['productid'];?>"><div class="color-box" style="background-color:<?php echo $row['color'];?>"></div></a>
                                 <?php
                             }
                          ?>
@@ -73,6 +73,12 @@
                 </div>
 
         </div>
+
+        <!-- here lens select option div code start -->
+
+        
+        <!-- here lens select code div code end  -->
+
         <!-- <?php include("component/footer.php");?>  Include footer -->
     </div>
     <script>

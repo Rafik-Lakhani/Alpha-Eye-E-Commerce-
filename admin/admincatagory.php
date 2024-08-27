@@ -60,7 +60,7 @@
 
           <!-- here women show boxes -->
 
-          <h2 class="cat-heading"><i class="ri-men-line"></i>WOMEN categories section</h2>
+          <h2 class="cat-heading"><i class="ri-women-line"></i>WOMEN categories section</h2>
           <div class="boxes">
             <?php
                 $result=mysqli_query($con,"SELECT * FROM categories WHERE men IS NULL AND setboth IS NULL");
@@ -100,7 +100,7 @@
           <!-- here both show boxes -->
 
 
-          <h2 class="cat-heading"><i class="ri-men-line"></i>BOTH categories section</h2>
+          <h2 class="cat-heading"><i class="ri-travesti-line"></i>BOTH categories section</h2>
           <div class="boxes">
             <?php
                 $result=mysqli_query($con,"SELECT * FROM categories WHERE women IS NULL AND men IS NULL");

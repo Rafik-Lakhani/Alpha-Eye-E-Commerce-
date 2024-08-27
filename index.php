@@ -55,7 +55,7 @@
                             $name=$row["name"];
                     ?>
                                 <div class="card">
-                                    <a href="product.php?pid=<?php echo $row["productid"]; ?>">
+                                    <a href="product.php?pname=<?php echo $row['name']  ?>&pid=<?php echo $row["productid"]; ?>">
                                     <img src="assets/images/<?php echo $row["img1"]; ?>" alt="main image">
                                     </a>
                                     <div class="detail-sec">

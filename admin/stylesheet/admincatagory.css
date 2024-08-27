@@ -17,6 +17,7 @@ html,body{
     display: flex;
     justify-content: space-between;
     background-color: #fafbfd;
+    position: relative;
 }
 
 .deshbord{

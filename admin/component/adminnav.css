@@ -21,8 +21,9 @@ nav{
     background-color:#0046FE;
     color: #fff;
     position: sticky;
-    top: 0%;
+    top: 0px;
     left: 0px;
+    border-radius:0px 0px 20px 0;
 }
 
 .nav_div{
