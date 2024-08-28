@@ -98,21 +98,21 @@
                 <div class="select-lenses2">
                         <button id="close"><i class="ri-close-circle-line"></i></button>
                     <h1>Select Power Type</h1>
-                    <div class="type-lense">
+                    <div class="type-lense" id="type1" onclick="getlense(1)">
                         <img src="assets/staticimg/single_vision.webp" alt="zero power image">
                         <div class="detail-name">
                             <h3>Single Vision/Powered Eyeglasses</h3>
                             <p>For distance or near vision.</p>
                         </div>
                     </div>
-                    <div class="type-lense">
+                    <div class="type-lense"id="type2" onclick="getlense(2)">
                         <img src="assets/staticimg/zero_power.webp" alt="zero power image">
                         <div class="detail-name">
                             <h3>Zero Power Eyeglasses</h3>
                             <p>Fashion or Protection from Glare/Computer Screens etc.</p>
                         </div>
                     </div>
-                    <div class="type-lense">
+                    <div class="type-lense" id="type3" onclick="getlense(3)">
                         <img src="assets/staticimg/bifocal.webp" alt="zero power image">
                         <div class="detail-name">
                             <h3>Bifocal/Progressive Eyeglasses</h3>
@@ -121,6 +121,11 @@
                     </div>
 
                     <button onclick="next(3)">Continue</button>
+                </div>
+
+                <div class="select-lenses3">
+                <h1>Select Lenses Type</h1>
+                <button onclick="next(3)">Continue</button>
                 </div>
 
             </div>
@@ -148,12 +153,152 @@
         //     console.log("dddd");
         //     // document.querySelector('#select-lenses').style.display='none';
         // });
-
+        var selectpower="";
         function next(pageno){
-            document.querySelector('.select-lenses').style.display='none';
-            // document.querySelector(`#page${pageno}`).style.display='block';
-            document.querySelector(`.select-lenses${pageno}`).style.display='flex';
+            if(pageno==2){
+                document.querySelector('.select-lenses').style.display='none';
+                document.querySelector(`.select-lenses2`).style.display='flex';
+            }
+            else if(pageno==3){
+                if(selectpower!=""){
+                    document.querySelector('.select-lenses').style.display='none';
+                    document.querySelector('.select-lenses2').style.display='none';
+                    document.querySelector(`.select-lenses3`).style.display='flex';
+                    if(selectpower=="Single Vision/Powered Eyeglasses"){
+                        document.querySelector(`.select-lenses3`).innerHTML+=`
+                         <div class="type-lense2">
+                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <div class="detail-name2">
+                                <div>
+                                    <h3>Basic</h3>
+                                    <h3>₹1200</h3>
+                                </div>
+                                <p>
+                                    Scratch Resistant<br>
+                                    Dust & Water Resistant<br>
+                                    High Clarity<br>
+                                    High Durability<br>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="type-lense2">
+                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <div class="detail-name2">
+                                <div>
+                                    <h3>BLUE TECH +</h3>
+                                    <h3>₹2500</h3>
+                                </div>
+                                <p>
+                                    Scratch Resistant<br>
+                                    Blue Filter<br>
+                                    Dust & Water Resistant<br>
+                                    High Clarity<br>
+                                    High Durability<br>
+                                </p>
+                            </div>
+                        </div>
+                        `;
+                    }
+                    else if(selectpower=="Zero Power Eyeglasses"){
+                        document.querySelector(`.select-lenses3`).innerHTML+=`
+                         <div class="type-lense2">
+                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <div class="detail-name2">
+                                <div>
+                                    <h3>Blue Filter+</h3>
+                                    <h3>₹2500</h3>
+                                </div>
+                                <p>
+                                    Scratch Resistant<br>
+                                    Dust & Water Resistant<br>
+                                    High Clarity<br>
+                                    High Durability<br>
+                                </p>
+                            </div>
+                        </div>
+
+                        `;
+                    }
+                    else if(selectpower=="Bifocal/Progressive Eyeglasses"){
+                        document.querySelector(`.select-lenses3`).innerHTML+=`
+                         <div class="type-lense2">
+                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <div class="detail-name2">
+                                <div>
+                                    <h3>Neo Digi</h3>
+                                    <h3>₹3000</h3>
+                                </div>
+                                <p>
+                                    Scratch Resistant<br>
+                                    UV400 Protect<br>
+                                    Dust & Water Resistant<br>
+                                    High Clarity<br>
+                                    High Durability<br>
+                                </p>
+                            </div>
+                        </div>
+
+                         <div class="type-lense2">
+                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <div class="detail-name2">
+                                <div>
+                                    <h3>Neo Digi with Anti Reflect</h3>
+                                    <h3>₹4500</h3>
+                                </div>
+                                <p>
+                                    Scratch Resistant<br>
+                                    Anti Reflective<br>
+                                    UV400 Protect<br>
+                                    Dust & Water Resistant<br>
+                                    High Clarity<br>
+                                    High Durability<br>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        
+                        `;
+                    }
+                    else{alert("Please select power type");}
+                }
+                else{
+                    alert("Please select power type");
+                }
+            }
+            // document.querySelector('.select-lenses').style.display='none';
+            // document.querySelector(`.select-lenses${pageno-1}`).style.display='none';
+            // // document.querySelector(`#page${pageno}`).style.display='block';
+            // document.querySelector(`.select-lenses${pageno}`).style.display='flex';
         }
+
+
+         function getlense(arg){
+            if(arg==1){
+                document.querySelector('#type1').style.backgroundColor='#fafdff';
+                document.querySelector('#type2').style.backgroundColor='#fff';
+                document.querySelector('#type3').style.backgroundColor='#fff';
+                selectpower="Single Vision/Powered Eyeglasses";
+            }
+            else if(arg==2){
+                document.querySelector('#type2').style.backgroundColor='#fafdff';
+                document.querySelector('#type1').style.backgroundColor='#fff';
+                document.querySelector('#type3').style.backgroundColor='#fff';
+                selectpower="Zero Power Eyeglasses";
+            }
+            else if(arg==3){
+                document.querySelector('#type3').style.backgroundColor='#fafdff';
+                document.querySelector('#type1').style.backgroundColor='#fff';
+                document.querySelector('#type2').style.backgroundColor='#fff';
+                selectpower="Bifocal/Progressive Eyeglasses";
+            }
+            else{
+                alert("Please select power type");
+            }
+        }
+
+
+
     
     </script>
 </body>
