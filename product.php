@@ -55,14 +55,14 @@
                             $result2=mysqli_query($con,$quary);
                             while($row=mysqli_fetch_assoc($result2)){
                                 ?>
-                                 <a href="product.php?name=<?php echo $row['name'] ?>&pid=<?php echo $row['productid'];?>"><div class="color-box" style="background-color:<?php echo $row['color'];?>"></div></a>
+                                 <a href="product.php?pid=<?php echo $row['productid'];?>"><div class="color-box" style="background-color:<?php echo $row['color'];?>"></div></a>
                                 <?php
                             }
                          ?>
                         </div>
                         </div>
                                 <div class="button-div">
-                                    <a href=""><button>Add To Cart</button></a>
+                                    <button onclick="show()">Add To Cart</button>
                                 </div>
                     <div class="detail-section">
                         <details>    
@@ -73,11 +73,58 @@
                 </div>
 
         </div>
+                <div class="box">     
+                     <!-- here lense select part  -->
+                    <div class="select-lenses">
+                            <button id="close"><i class="ri-close-circle-line"></i></button>
+                    <i class="ri-star-line"></i>
+                    <h1>Add Lenses</h1>
+                        <p>You have chosen a <?php echo $product['size']; ?> sized frame<br>
+                        for ₹<?php echo $product['mrp'];?></p>
 
-        <!-- here lens select option div code start -->
 
-        
-        <!-- here lens select code div code end  -->
+                            <button id="btn-buy" onclick="next(2)">
+                                <h5>Buy With Lenses</h5>
+                            </button>
+                                <a herf="selectlense.php?name=<?php echo $product['name']; ?>&pid=<?php echo $product['productid']; ?>">
+                                    <button id="btn-frm">
+                                        <h5>I need only frames</h5>
+                                    </button>
+                                </a>
+
+                    </div>
+                    <!-- end of lens select part -->
+                
+                <div class="select-lenses2">
+                        <button id="close"><i class="ri-close-circle-line"></i></button>
+                    <h1>Select Power Type</h1>
+                    <div class="type-lense">
+                        <img src="assets/staticimg/single_vision.webp" alt="zero power image">
+                        <div class="detail-name">
+                            <h3>Single Vision/Powered Eyeglasses</h3>
+                            <p>For distance or near vision.</p>
+                        </div>
+                    </div>
+                    <div class="type-lense">
+                        <img src="assets/staticimg/zero_power.webp" alt="zero power image">
+                        <div class="detail-name">
+                            <h3>Zero Power Eyeglasses</h3>
+                            <p>Fashion or Protection from Glare/Computer Screens etc.</p>
+                        </div>
+                    </div>
+                    <div class="type-lense">
+                        <img src="assets/staticimg/bifocal.webp" alt="zero power image">
+                        <div class="detail-name">
+                            <h3>Bifocal/Progressive Eyeglasses</h3>
+                            <p>Distance & Near vision in same lenses.</p>
+                        </div>
+                    </div>
+
+                    <button onclick="next(3)">Continue</button>
+                </div>
+
+            </div>
+                
 
         <!-- <?php include("component/footer.php");?>  Include footer -->
     </div>
@@ -89,6 +136,25 @@
             mainimg.src=document.querySelector(`#subimg${imgno}`).src;
             document.querySelector(`#subimg${imgno}`).src=srcurl;
         }
+        function show(){
+            document.querySelector('.box').style.display='block';
+        }
+
+        document.querySelector("#close").addEventListener("click",()=>{
+            document.querySelector('.box').style.display='none';
+        });
+
+        // document.querySelector("#btn-buy").addEventListener("click",()=>{
+        //     console.log("dddd");
+        //     // document.querySelector('#select-lenses').style.display='none';
+        // });
+
+        function next(pageno){
+            document.querySelector('.select-lenses').style.display='none';
+            // document.querySelector(`#page${pageno}`).style.display='block';
+            document.querySelector(`.select-lenses${pageno}`).style.display='flex';
+        }
+    
     </script>
 </body>
 </html>
