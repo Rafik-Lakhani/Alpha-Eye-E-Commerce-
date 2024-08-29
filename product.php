@@ -132,7 +132,7 @@
 
             <!-- here hidden form to transfer data in cart page  -->
 
-            <form action="addcart.php" method="get" style="display:none">
+            <form action="cart.php" method="get" style="display:none">
                 <input type="hidden" name="type" id="type">
                 <input type="hidden" name="productid" id="productid" 
                 value="<?php echo $product['productid'] ?>">

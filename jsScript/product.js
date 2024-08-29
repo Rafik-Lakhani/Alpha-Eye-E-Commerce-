@@ -38,7 +38,7 @@ var mainimg= document.querySelector('#main-img');
         var selectpower="";
         function next(pageno){
             if(pageno==2){
-                document.querySelector('#type').value="framewithclass";
+                document.querySelector('#type').value="framewithglass";
                 document.querySelector('.select-lenses').style.display='none';
                 document.querySelector(`.select-lenses2`).style.display='flex';
             }
