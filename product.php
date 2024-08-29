@@ -76,7 +76,7 @@
                 <div class="box">     
                      <!-- here lense select part  -->
                     <div class="select-lenses">
-                            <button id="close"><i class="ri-close-circle-line"></i></button>
+                            <button class="close"><i class="ri-close-circle-line"></i></button>
                     <i class="ri-star-line"></i>
                     <h1>Add Lenses</h1>
                         <p>You have chosen a <?php echo $product['size']; ?> sized frame<br>
@@ -96,7 +96,7 @@
                     <!-- end of lens select part -->
                 
                 <div class="select-lenses2">
-                        <button id="close"><i class="ri-close-circle-line"></i></button>
+                        <button class="close" onclick="close()"><i class="ri-close-circle-line"></i></button>
                     <h1>Select Power Type</h1>
                     <div class="type-lense" id="type1" onclick="getlense(1)">
                         <img src="assets/staticimg/single_vision.webp" alt="zero power image">
@@ -120,186 +120,31 @@
                         </div>
                     </div>
 
-                    <button onclick="next(3)">Continue</button>
+                    <button onclick="next(3)" class="continuebtn">Continue</button>
                 </div>
 
                 <div class="select-lenses3">
-                <h1>Select Lenses Type</h1>
-                <button onclick="next(3)">Continue</button>
+                    <button class="close"><i class="ri-close-circle-line"></i></button>
+                    <h1>Select Lenses Type</h1>
                 </div>
 
             </div>
+
+            <!-- here hidden form to transfer data in cart page  -->
+
+            <form action="addcart.php" method="get" style="display:none">
+                <input type="hidden" name="type" id="type">
+                <input type="hidden" name="productid" id="productid" 
+                value="<?php echo $product['productid'] ?>">
+                <input type="hidden" name="powertype" id="powertype" value="null">
+                <input type="hidden" name="lensetype" id="lensetype" value="null">
+                <input type="hidden" name="lenseprice" id="lenseprice" value="null">
+                <input type="submit" name="productpage" id="submitbtn">
+            </form>
                 
 
         <!-- <?php include("component/footer.php");?>  Include footer -->
     </div>
-    <script>
-        var mainimg= document.querySelector('#main-img');
-        
-        function changeimg(imgno){
-            var srcurl=mainimg.src;
-            mainimg.src=document.querySelector(`#subimg${imgno}`).src;
-            document.querySelector(`#subimg${imgno}`).src=srcurl;
-        }
-        function show(){
-            document.querySelector('.box').style.display='block';
-        }
-
-        document.querySelector("#close").addEventListener("click",()=>{
-            document.querySelector('.box').style.display='none';
-        });
-
-        // document.querySelector("#btn-buy").addEventListener("click",()=>{
-        //     console.log("dddd");
-        //     // document.querySelector('#select-lenses').style.display='none';
-        // });
-        var selectpower="";
-        function next(pageno){
-            if(pageno==2){
-                document.querySelector('.select-lenses').style.display='none';
-                document.querySelector(`.select-lenses2`).style.display='flex';
-            }
-            else if(pageno==3){
-                if(selectpower!=""){
-                    document.querySelector('.select-lenses').style.display='none';
-                    document.querySelector('.select-lenses2').style.display='none';
-                    document.querySelector(`.select-lenses3`).style.display='flex';
-                    if(selectpower=="Single Vision/Powered Eyeglasses"){
-                        document.querySelector(`.select-lenses3`).innerHTML+=`
-                         <div class="type-lense2">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
-                            <div class="detail-name2">
-                                <div>
-                                    <h3>Basic</h3>
-                                    <h3>₹1200</h3>
-                                </div>
-                                <p>
-                                    Scratch Resistant<br>
-                                    Dust & Water Resistant<br>
-                                    High Clarity<br>
-                                    High Durability<br>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="type-lense2">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
-                            <div class="detail-name2">
-                                <div>
-                                    <h3>BLUE TECH +</h3>
-                                    <h3>₹2500</h3>
-                                </div>
-                                <p>
-                                    Scratch Resistant<br>
-                                    Blue Filter<br>
-                                    Dust & Water Resistant<br>
-                                    High Clarity<br>
-                                    High Durability<br>
-                                </p>
-                            </div>
-                        </div>
-                        `;
-                    }
-                    else if(selectpower=="Zero Power Eyeglasses"){
-                        document.querySelector(`.select-lenses3`).innerHTML+=`
-                         <div class="type-lense2">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
-                            <div class="detail-name2">
-                                <div>
-                                    <h3>Blue Filter+</h3>
-                                    <h3>₹2500</h3>
-                                </div>
-                                <p>
-                                    Scratch Resistant<br>
-                                    Dust & Water Resistant<br>
-                                    High Clarity<br>
-                                    High Durability<br>
-                                </p>
-                            </div>
-                        </div>
-
-                        `;
-                    }
-                    else if(selectpower=="Bifocal/Progressive Eyeglasses"){
-                        document.querySelector(`.select-lenses3`).innerHTML+=`
-                         <div class="type-lense2">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
-                            <div class="detail-name2">
-                                <div>
-                                    <h3>Neo Digi</h3>
-                                    <h3>₹3000</h3>
-                                </div>
-                                <p>
-                                    Scratch Resistant<br>
-                                    UV400 Protect<br>
-                                    Dust & Water Resistant<br>
-                                    High Clarity<br>
-                                    High Durability<br>
-                                </p>
-                            </div>
-                        </div>
-
-                         <div class="type-lense2">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
-                            <div class="detail-name2">
-                                <div>
-                                    <h3>Neo Digi with Anti Reflect</h3>
-                                    <h3>₹4500</h3>
-                                </div>
-                                <p>
-                                    Scratch Resistant<br>
-                                    Anti Reflective<br>
-                                    UV400 Protect<br>
-                                    Dust & Water Resistant<br>
-                                    High Clarity<br>
-                                    High Durability<br>
-                                </p>
-                            </div>
-                        </div>
-                        
-                        
-                        `;
-                    }
-                    else{alert("Please select power type");}
-                }
-                else{
-                    alert("Please select power type");
-                }
-            }
-            // document.querySelector('.select-lenses').style.display='none';
-            // document.querySelector(`.select-lenses${pageno-1}`).style.display='none';
-            // // document.querySelector(`#page${pageno}`).style.display='block';
-            // document.querySelector(`.select-lenses${pageno}`).style.display='flex';
-        }
-
-
-         function getlense(arg){
-            if(arg==1){
-                document.querySelector('#type1').style.backgroundColor='#fafdff';
-                document.querySelector('#type2').style.backgroundColor='#fff';
-                document.querySelector('#type3').style.backgroundColor='#fff';
-                selectpower="Single Vision/Powered Eyeglasses";
-            }
-            else if(arg==2){
-                document.querySelector('#type2').style.backgroundColor='#fafdff';
-                document.querySelector('#type1').style.backgroundColor='#fff';
-                document.querySelector('#type3').style.backgroundColor='#fff';
-                selectpower="Zero Power Eyeglasses";
-            }
-            else if(arg==3){
-                document.querySelector('#type3').style.backgroundColor='#fafdff';
-                document.querySelector('#type1').style.backgroundColor='#fff';
-                document.querySelector('#type2').style.backgroundColor='#fff';
-                selectpower="Bifocal/Progressive Eyeglasses";
-            }
-            else{
-                alert("Please select power type");
-            }
-        }
-
-
-
-    
-    </script>
+    <script src="jsScript/product.js"></script>
 </body>
 </html>
