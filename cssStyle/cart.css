@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    background-color: #f0f8ff;
+    /* height: 100%; */
+}
+
+.cart-sec{
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart-container {
+    width: 60%;
+    padding: 24px;
+    background-color: transparent;
+    color: #333;
+    margin: 0 auto;
+  }
+  
+  .cart-container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .cart-item {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+    background-color: #ffff;
+  }
+  
+  .cart-item-details {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: #777;
+  }
+  
+  .cart-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .cart-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .cart-item-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .cart-item-header p {
+    margin: 0;
+    color: #777;
+  }
+  
+  .cart-item-price {
+    text-align: right;
+  }
+  
+  .price-current {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .price-old {
+    font-size: 0.875rem;
+    color: #999;
+    text-decoration: line-through;
+  }
+  
+  .cart-item-actions {
+    display: flex;
+    gap: 16px;
+  }
+  
+
+  .quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.quantity-button {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    color: #333;
+    user-select: none;
+}
+
+.quantity-input {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+.quantity-button:hover {
+    background-color: #ddd;
+}
