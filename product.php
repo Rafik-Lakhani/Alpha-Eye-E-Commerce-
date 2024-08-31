@@ -55,7 +55,7 @@
                             $result2=mysqli_query($con,$quary);
                             while($row=mysqli_fetch_assoc($result2)){
                                 ?>
-                                 <a href="product.php?pid=<?php echo $row['productid'];?>"><div class="color-box" style="background-color:<?php echo $row['color'];?>"></div></a>
+                                 <a href="product.php?name=<?=$row['name'] ?>&pid=<?php echo $row['productid'];?>"><div class="color-box" style="background-color:<?php echo $row['color'];?>"></div></a>
                                 <?php
                             }
                          ?>

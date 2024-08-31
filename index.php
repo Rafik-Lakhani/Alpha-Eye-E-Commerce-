@@ -40,11 +40,11 @@
         <div class="newarrivals-div">
             <div class="heading">
                 <h1>New Arrivals</h1>
-                <a href="#"><button>See All</button></a>
+                <a href="viewproduct.php?query=newarrivals"><button>See All</button></a>
             </div>
             <div class="card-div">
                 <?php 
-                    $select ="SELECT * FROM product WHERE addingdate >= DATE_SUB(CURRENT_DATE, INTERVAL 1 MONTH)";
+                    $select ="SELECT * FROM product WHERE addingdate >= DATE_SUB(CURRENT_DATE, INTERVAL 1 MONTH) AND status='show'";
                     $result1 = mysqli_query($con, $select);
                     $name="";
                     while($row = mysqli_fetch_assoc($result1)){
@@ -65,7 +65,11 @@
                                             <h3>₹<?php echo $row["sellingprice"]; ?></h3>
                                         </div>
                                         <div class="btn-div">
-                                            <a href="#"><button><i class="ri-shopping-cart-line"></i></button></a>
+                                            <a href="#">
+                                                <button>
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
                                     
