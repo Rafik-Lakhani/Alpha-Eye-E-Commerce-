@@ -19,16 +19,16 @@
                         $category=$_GET['category'];
                         $select ="SELECT * FROM product WHERE subcategory='$category'";
                         $result1 = mysqli_query($con, $select); 
-                        if(mysqli_num_rows($result1)<=0){
+                        if(!$result1 || mysqli_num_rows($result1)==0){
                             echo "<h2>No Any Product Found</h2>";
                             exit();
                         }
                     }
                     elseif(isset($_GET['search'])){
                         $search=$_GET['searchquery'];
-                        $select_product = "SELECT * FROM product WHERE CONCAT(name,subcategory,size,color,maincategory) LIKE '%$search%' AND status = 'show'";
+                        $select_product = "SELECT * FROM product WHERE CONCAT(name,subcategory,mrp,sellingprice,size,color,maincategory) LIKE '%$search%' AND status = 'show'";
                         $result1 = mysqli_query($con, $select_product);
-                        if(mysqli_num_rows($result1)<=0){
+                        if(!$result1 || mysqli_num_rows($result1)==0){
                             echo "<h2>No Search Product Found</h2>";
                             exit();
                         }
@@ -36,7 +36,7 @@
                     elseif(isset($_GET['query'])){
                         $select_product = "SELECT * FROM product WHERE addingdate >= DATE_SUB(CURRENT_DATE, INTERVAL 3 MONTH) AND status='show'";
                         $result1 = mysqli_query($con, $select_product);
-                        if(mysqli_num_rows($result1)<=0){
+                        if(!$result1 || mysqli_num_rows($result1)==0){
                             echo "<h2>No Product Found</h2>";
                             exit();
                         }

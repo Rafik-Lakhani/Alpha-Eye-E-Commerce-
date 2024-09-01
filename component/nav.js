@@ -39,3 +39,27 @@ searchbtn.addEventListener("click",()=>{
 searchclose.addEventListener("click",()=>{
     searchdiv.style.display="none";
 });
+
+var menuopen=false;
+document.querySelector("#user-logo").addEventListener("click",()=>{
+    if(!menuopen){
+        document.querySelector(".menu-div").style.right="20px";
+        document.querySelector("#user-name-logo").style.display="none";
+        document.querySelector("#userclose").style.display="block";
+        document.querySelector("#user-logo").style.paddingLeft="3px";
+        document.querySelector("#user-logo").style.paddingRight="3px";
+        menuopen=true;
+    }
+    else{
+        document.querySelector(".menu-div").style.right="-140px";
+        document.querySelector("#user-name-logo").style.display="block";
+        document.querySelector("#userclose").style.display="none";
+        document.querySelector("#user-logo").style.paddingLeft="7px";
+        document.querySelector("#user-logo").style.paddingRight="7px";
+        menuopen=false;
+    }
+    
+});
+
+
+

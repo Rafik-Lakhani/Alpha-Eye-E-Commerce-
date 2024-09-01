@@ -87,12 +87,18 @@
                         $data=mysqli_fetch_assoc($result);
                         $char=str_split($data['username']);
                         ?>
-                            <a href="logout.php"><i id="user-logo"><?php echo $char[0];?></i></a>
+                            <button id="user-logo">
+                                <i class='ri-close-circle-line' id="userclose" style="display:none"></i>
+                                <i id='user-name-logo'>
+                                    <?php echo $char[0];?>
+                                </i>
+                            </button>
                         <?php
                     }
                 ?>
                 <a href="cart.php"><i class="ri-shopping-cart-2-line"></i></a>
             </div>
+            <!-- search  box design -->
            <div class="search-sec">
                     <form method="get" action="viewproduct.php">
                         <input type="text" name="searchquery" placeholder="Search Product">
@@ -102,6 +108,25 @@
                         </button>
                     </form>
            </div>
+
+           <!-- here user profile menu -->
+            <!-- user profile menu -->
+                <div class="menu-div">
+                    <ul>
+                        <li><a href="profile.php">
+                            <i class="ri-shield-user-line"></i>Profile</a>
+                        </li>
+                        <li><a href="order.php">
+                            <i class="ri-truck-line"></i>Orders</a>
+                        </li>
+                        <li><a href="logout.php">
+                            <i class="ri-shut-down-line"></i>Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            <!-- user profile menu -->
+        </div>
+
         </div>
     </nav>
 
