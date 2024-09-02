@@ -134,6 +134,7 @@
 
             <form action="addcart.php" method="get" style="display:none">
                 <input type="hidden" name="type" id="type">
+                <input type="hidden" name="action" value="addproduct">
                 <input type="hidden" name="productid" id="productid" 
                 value="<?php echo $product['productid'] ?>">
                 <input type="hidden" name="powertype" id="powertype" value="null">
@@ -142,7 +143,42 @@
                 <input type="submit" name="productpage" id="submitbtn">
             </form>
                 
+        <!-- here add Similar Products start -->
+        <h1 id="similarproduct-heading">Similar Products</h1>
+        <div class="card-div">
+                <?php 
+                    $fecthproduct ="SELECT * FROM product WHERE subcategory='$product[subcategory]'
+                    AND productid !=$product[productid] LIMIT 3";
+                    $similerproduct = mysqli_query($con, $fecthproduct);
 
+                    while($row = mysqli_fetch_assoc($similerproduct)){
+                    ?>
+                                <div class="card">
+                                    <a href="product.php?pname=<?php echo $row['name']  ?>&pid=<?php echo $row["productid"]; ?>">
+                                    <img src="assets/images/<?php echo $row["img1"]; ?>" alt="main image">
+                                    </a>
+                                    <div class="detail-sec">
+                                        <div class="name-div">
+                                            <h3><?php echo $row["name"]; ?></h3>
+                                            <h5><?php echo $row["subcategory"]; ?></h5>
+                                            <h3>₹<?php echo $row["sellingprice"]; ?></h3>
+                                        </div>
+                                        <div class="btn-div">
+                                            <a href="addcart.php?action=addproduct&type=onlyframe&productid=
+                                            <?= $row['productid']?>">
+                                                <button>
+                                                    <i class="ri-shopping-cart-line"></i>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                       
+                    <?php
+                    }?>
+            </div>
+        <!-- end add Similar Products -->
         <!-- <?php include("component/footer.php");?>  Include footer -->
     </div>
     <script src="jsScript/product.js"></script>

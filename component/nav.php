@@ -73,7 +73,7 @@
                 <div class="search-div">
                     <i class="ri-search-line" id="search-icon"></i>
                 </div>
-                <?php 
+                <?php
                     if(!isset($_SESSION['email'])){
                         ?>
                             <a href="singin.php"><i class="ri-user-line"></i></a>
@@ -95,7 +95,7 @@
                             </button>
                         <?php
                     }
-                ?>
+                ?>  
                 <a href="cart.php"><i class="ri-shopping-cart-2-line"></i></a>
             </div>
             <!-- search  box design -->

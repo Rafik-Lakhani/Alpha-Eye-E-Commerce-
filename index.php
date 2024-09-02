@@ -65,7 +65,8 @@
                                             <h3>₹<?php echo $row["sellingprice"]; ?></h3>
                                         </div>
                                         <div class="btn-div">
-                                            <a href="#">
+                                            <a href="addcart.php?action=addproduct&type=onlyframe&productid=
+                                            <?= $row['productid']?>">
                                                 <button>
                                                     <i class="ri-shopping-cart-line"></i>
                                                 </button>

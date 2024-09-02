@@ -1,20 +1,20 @@
 <?php 
-        include("component/nav.php");
         include("config/dbconnect.php");
         include("config/fontfamily.php");
         include("config/remixicone.php");
+        session_start();
     ?>
     <?php
     if(isset($_GET["type"])){
 
-        if(isset($_SESSION["email"])&& isset($_SESSION["role"]))
+        if(isset($_SESSION["email"]) && isset($_SESSION["role"]))
          {
                 $useremail=$_SESSION['email'];
                 $sql = "SELECT * FROM userdata WHERE useremail= '$useremail'";
                 $result = mysqli_query($con, $sql);
                 $data = mysqli_fetch_assoc($result);
 
-                if(isset($_GET['productpage'])){
+                if($_GET['action']=="addproduct"){
 
                         if($_GET['type']=="onlyframe"){
                                 $productid=$_GET['productid'];
