@@ -6,11 +6,14 @@
 <link rel="stylesheet" href="component/nav.css">
 <div class="login-container">
     <div class="login-div">
-        <a href="index.php">
+        <div class="image-part">
+            <img src="assets/staticimg/loginpage.png" alt="image of login">
+        </div>
+        <a href="index.php" id="close-icon">
             <i class="ri-close-fill close-icon"></i>
         </a>
-        <h1 class="heading">Sign in</h1>
         <form action="verify.php" method="post">
+            <h1 class="heading">Sign in</h1>
             <label for="email" class="email">Enter email</label>
             <input type="email" id="email" name="email" require placeholder="example@gmail.com">
             <label for="password" class="password">Enter Password</label>
@@ -29,7 +32,7 @@
                 </h4>
                 <h4><a href="forget.php">Forget Password?</a></h4>
             </div>
-            <input type="submit" name="login" id="login-sub" name="signin">
+            <input type="submit" name="login" id="sub" name="signin">
 
             <h3 id="signup">Don't Have Account? <a href="singup.php">Signup</a></h3>
         </form>

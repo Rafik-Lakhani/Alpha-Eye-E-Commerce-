@@ -5,11 +5,14 @@
 
 <div class="login-container">
     <div class="login-div">
+    <div class="image-part">
+        <img src="assets/staticimg/register.png" alt="image of register">
+    </div>
     <a href="index.php">
             <i class="ri-close-fill" id="close-icon"></i>
     </a>
-        <h1 class="heading">Sign Up</h1>
         <form action="verify.php" method="post">
+            <h1 class="heading">Sign Up</h1>
            <label for="Username">Enter Your User Name</label>
            <input type="text" name="username" class="from-input" required placeholder="Enter Your User Name">
 

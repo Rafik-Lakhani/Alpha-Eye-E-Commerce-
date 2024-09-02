@@ -160,7 +160,7 @@ nav{
 }
 
 .category-div{
-    position: absolute;
+    position: fixed;
     top: -250px;
     background-color: #fff;
     margin: auto;
@@ -283,7 +283,7 @@ nav{
 /* here user profile menu div css code */
 
 .menu-div{
-    transition: all ease 1s;
+    transition: all ease 0.5s;
     padding: 20px;
     color: black;
     position: fixed;

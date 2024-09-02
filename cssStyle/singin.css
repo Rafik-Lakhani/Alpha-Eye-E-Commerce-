@@ -4,13 +4,13 @@
     box-sizing:border-box;
 }
 
-html,body{
-    height:100%;
-    width:100%;
-    color: #424874;
-    background: linear-gradient(
-        to bottom right,#F4EEFF,#DCD6F7);
-    font-family: "Poppins", sans-serif;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  color: #000;
+  background-color: #f4f5f6;
+  font-family: "Poppins", sans-serif;
 }
 
 
@@ -23,119 +23,152 @@ html,body{
 }
 
 
-.login-div{
-    border: 2px solid #424874;
-    width: 30%;
-    border-radius:40px;
-    padding: 30px;
-    padding-bottom: 20px;
+.login-container {
     display: flex;
-    flex-direction:column;
+    min-height: 92%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .login-div {
+    width: 60%;
+    border-radius: 40px;
+    padding: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     margin: auto;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
     position: relative;
-}
-
-.login-div form{
+    background-color: #fff;
+    box-shadow: 3px 4px 7px #29262618;;
+    
+  }
+  
+  .login-div .image-part{
+      min-height: 100%;
+      width: 51%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .image-part img{
+    width: 98%;
+    /* height: fit-content; */
+    height: 70vh;
+    border-radius:30px ;
+    object-fit: cover;
+  }
+  
+  .login-div form {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 90%;
+    width: 45%;
     font-size: 1.15rem;
     padding: 10px;
     font-weight: 500;
-}
-.login-div form input{
-    padding: 5px 10px;
+  }
+  
+  .login-div form h1{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-div input {
     border-radius: 10px;
-    color: #424874;
-    border-color: #424874;
-}
+    padding: 5px 10px;
+    color: #000;
+    border-color: transparent;
+    background-color: #cccccc69;
+  }
 
-.heading{
-    margin-bottom:10px;
-    font-weight: 700;
-}
-
-.password{
+  .login-div form label{
     margin-top: 10px;
-}
-
-.pw-div{
+  }
+  
+  .heading {
+    padding-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .Email {
+    padding-top: 7px;
+  }
+  
+  .pw-div{
     display: flex;
+    flex-direction: column;
     position: relative;
-}
-.pw-div input{
+  }
+  
+  #password{
     width: 100%;
-}
-
-#pw-eye{
+  }
+  #pw-eye{
     position: absolute;
-    top:3px;
-    right: 5px;
+    top: 8px;
+    right:10px;
     font-size: 1.15rem;
-}
+  }
 
-.msg-div{
+  .msg-div{
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding:5px 5px;
-    margin-bottom: 25px;
-}
+    align-items: center;
+  }
 
-.msg-div h4 a{
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: #424874;
-}
-
-
-#login-sub{
-    padding: 5px;
-    background-color: #424874;
-    color: #fff;
-    font-size: 1.06rem;
-}
-
-form #signup{
-    color: #424874;
+  .msg-div h4{
     font-size: 1rem;
-    margin: auto;
-    margin-top: 10px;
-}
+    color: #000;
+  }
+  .msg-div h4 a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #000;
+  }
+  
+  .con-pass{
+    padding-top: 7px;
+  }
+  
+  #sub{
+    margin-top: 30px;
+    color: white;
+    background-color: #169483;
+    font-size: 1.1rem;
+  }
 
-form #signup a{
+  #sub:hover{
+    background-color: #148369;
+  }
+  
+  h3{
+    margin-top: 10px;
+    font-size: 1.0rem;
+  }
+  h3 a{
     text-decoration: none;
     color: black;
-}
-
-.close-icon{
+  }
+  
+  
+  #close-icon{
     position: absolute;
     top: 10px;
     font-size: 1.8rem;
     right: 15px;
     text-decoration: none;
-    color: #424874;
-}
-
-.close-icon:hover{
+    color: #000;
+  }
+  
+  #close-icon:hover{
     color: white;
-    background-color: #424874;
+    background-color: #000;
     border-radius: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
