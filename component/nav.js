@@ -36,6 +36,7 @@ searchbtn.addEventListener("click",()=>{
     searchdiv.style.display="block";
 });
 
+
 searchclose.addEventListener("click",()=>{
     searchdiv.style.display="none";
 });

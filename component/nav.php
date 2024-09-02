@@ -103,10 +103,10 @@
                     <form method="get" action="viewproduct.php">
                         <input type="text" name="searchquery" placeholder="Search Product">
                         <input type="submit" name="search" style="display:none">
-                        <button id="closesearch">
-                            <i class="ri-close-circle-line"></i>
-                        </button>
                     </form>
+                    <button id="closesearch">
+                        <i class="ri-close-circle-line"></i>
+                    </button>
            </div>
 
            <!-- here user profile menu -->
@@ -125,7 +125,7 @@
                     </ul>
                 </div>
             <!-- user profile menu -->
-        </div>
+        <!-- </div> -->
 
         </div>
     </nav>

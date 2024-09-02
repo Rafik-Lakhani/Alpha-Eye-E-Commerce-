@@ -170,7 +170,7 @@ nav{
     width: 450px;
     border-radius: 25px;
     transition: all ease-in 0.5s;
-    z-index: 999;
+    z-index:1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -240,7 +240,7 @@ nav{
     background-color: #F7F7F9;
     border-radius:30px ;
     width: 500px;
-    position: absolute;
+    position: fixed !important;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-75%);
@@ -266,8 +266,8 @@ nav{
 
 .search-sec button{
     position: absolute;
-    right: 10px;
-    top: 5px;
+    right: 15px;
+    top: 35px;
     border-radius: 50%;
     font-size: 2rem;
     background-color: transparent;

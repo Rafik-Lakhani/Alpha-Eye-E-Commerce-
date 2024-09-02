@@ -21,7 +21,7 @@
               lifestyle. Our commitment to innovation and craftsmanship ensures
               that each pair not only enhances your vision but also complements
               your style.</p>
-                <a href="#"><button>Find Style</button></a>
+                <a href="viewproduct.php"><button>Find Style</button></a>
             </div>
                 <div class="right-div">
                     <!-- <img id="higlight-img" src="assets/staticimg/homepageimg.jpg" >
