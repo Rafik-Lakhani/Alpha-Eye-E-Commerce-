@@ -33,6 +33,7 @@
                             exit();
                         }
                     }
+                    // here this request is newarrive requested
                     elseif(isset($_GET['query'])){
                         $select_product = "SELECT * FROM product WHERE addingdate >= DATE_SUB(CURRENT_DATE, INTERVAL 3 MONTH) AND status='show'";
                         $result1 = mysqli_query($con, $select_product);

@@ -18,8 +18,9 @@
                 $fetchuser="select * from userdata where useremail='$email'";
                 $result=mysqli_query($con,$fetchuser);
                 $data=mysqli_fetch_array($result);
+                
+                // here check if useraddress table hold user data or not
                 $isaddress=false;
-
                 $select="SELECT * FROM `useraddres` WHERE userid=$data[id]";
                 $ans=mysqli_query($con,$select);
                 if(mysqli_num_rows($ans)>0){

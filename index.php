@@ -113,7 +113,7 @@
                             <p>Navigate Every Journey :Eyewear Companion for the Always- Driving Enthusiast</p>
                             </div>
         </div>
-    
+            <?php include("component/footer.php");?>
     </div>
     <script src="jsScript/script.js"></script>
 </body>

@@ -21,139 +21,86 @@ $totalprice=0;
     
     <div class="main">
             <?php  include("component/nav.php");?>
-            <div class="cart-sec">
-                    <div class="cart-container">
-                        <h2>Your Cart</h2>
+        <div class="cart">
+            <div class=cart-first>
+                <div class="heading">
+                    <h2>Your Cart</h2>
+                </div>
+                <div class="product-div">
 
+                    <img class=img src="assets\staticimg\Cateye\blackfullrimcateyemedium-2.jpg" alt="">
                     
-<?php
-    
-        if(isset($_SESSION["email"])&& isset($_SESSION["role"])){
-            // here fetch user information from database
-            $useremail=$_SESSION['email'];
-            $sql="SELECT * FROM userdata WHERE useremail='$useremail'";
-            $result=mysqli_query($con,$sql);
-            $userdata=mysqli_fetch_assoc($result);
-
-            // here fetch cart information from database base on the user id
-            $select="select * from cart where userid=$userdata[id]";
-            $ans=mysqli_query($con,$select);
-            
-            if(mysqli_num_rows($ans)==0){
-                echo "OPP's not any product added to cart";
-                exit();
-            }
-            
-        
-            // here show data in the page
-            while($cartdata=mysqli_fetch_assoc($ans)){
-                 
-                // here fetch product information from database base on the product id base cart database product id
-
-                $productid=$cartdata['productid']; //here product id is cart database product id
-                $query="SELECT * FROM product WHERE productid=$productid";
-                $answer=mysqli_query($con,$query);
-                $productdata=mysqli_fetch_assoc($answer);
-
-                // here display product information in the cart page
-                
-                if($cartdata['powertype']!="NUll"){
-                ?>
-                    <!-- here ul and li code of html -->
-                    <ul class="cart-list">
-                        <li class="cart-item">
-                            <div class="cart-item-details">
-                            <img
-                                src="assets/images/<?php echo $productdata['img1']?>"
-                                alt="cart product image"
-                                class="cart-item-image"
-                            />
-                            <div class="cart-item-info">
-                                <div class="cart-item-header">
-                                <div>
-                                    <h3><?php echo $productdata['name']?></h3>
-                                    <h3>Lens:<?php echo $cartdata['lenstype']?></h3>
-                                    <p><?php echo $productdata['size']?></p>
-                                </div>
-                                <div class="cart-item-price">
-                                    <p class="price-current">
-                                        <?php $price=$cartdata['lensprice']+$productdata['sellingprice'];
-                                            echo $price*$cartdata['quantity'];
-                                        ?>
-                                    </p>
-                                    <p class="price-old"><?php echo $productdata['mrp']*$cartdata['quantity']?></p>
-                                </div>
-                                </div>
-                                <div class="cart-item-actions">
-                                    <button class="btn-remove">
-                                        <span><a href="#"><i class="ri-delete-bin-6-line"></i></a></span>
-                                    </button>
-                                        <div class="quantity-container">
-                                            <button class="quantity-button minus">-</button>
-                                            <input type="text" class="quantity-input" value=<?php echo $cartdata['quantity'] ?> >
-                                            <button class="quantity-button plus">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                   
-                    
-                <?php
-                }   
-                else{
-                ?>
-                    <ul class="cart-list">
-                        <li class="cart-item">
-                            <div class="cart-item-details">
-                            <img
-                                src="assets/images/<?php echo $productdata['img1']?>"
-                                alt="cart product image"
-                                class="cart-item-image"
-                            />
-                            <div class="cart-item-info">
-                                <div class="cart-item-header">
-                                <div>
-                                    <h3><?php echo $productdata['name']?><h3>
-                                    <p><?php echo $productdata['size']?></p>
-                                </div>
-                                <div class="cart-item-price">
-                                    <p class="price-current"><?php echo $productdata['sellingprice']?></p>
-                                    <p class="price-old"><?php echo $productdata['mrp']?></p>
-                                </div>
-                                </div>
-                                <div class="cart-item-actions">
-                                    <button class="btn-remove">
-                                        <span><a href=""><i class="ri-delete-bin-6-line"></i></a></span>
-                                    </button>
-                                    <div class="quantity-container">
-                                            <button class="quantity-button minus">-</button>
-                                            <input type="text" class="quantity-input" value="1">
-                                            <button class="quantity-button plus">+</button>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </li>
-                    </ul>
-
-                 <!--here  cart-container div complate -->
-                 
-
-                        <div class="total-div">
-                            <h1>Order Summary (<?php echo mysqli_num_rows($and);?>)</h1>
+                    <div class="product-detail">
+                        <div class="product-name">                       
+                             <h3>Vincent Chase
+                                 Full<br> Rim Geometric</h3>
+                             <h5>₹1999</h5>
                         </div>
-                    </div>
-                 </div>
-                <?php
-                }
-            }
+                        <div class="lens">
+                            <h5>Lens:</h5>
+                            <h6>₹1999</h6>
+                        </div>
+                        <div class="line"></div>
+                            <div class="final-price">
+                                <h4>Final Price</h4>
+                                <h6>₹1999</h6>
+                            </div>
+                        <div class="line-2"></div>
+                        
+                        <div class="quantity-wrapper">
+                           <span>
+                            <button type="text">remove</button>
+                           </span>
+                            <div class= "quantity-wrapper-2">
+                                <button class="quantity-button" id="remove-btn">-</button>
+                                <input type="text" id="quantity" value="1">
+                                <button class="quantity-button" id="add-btn">+</button>
+                            </div>
+                        </div>
 
-        }
-        else{
-            echo "OPP's not any product added to cart";
-        }
-?>
+                    </div>
+                </div>
+            </div>
+
+            <!--belling section -->
+
+
+                        <div class="car-sec">
+                            <div class="heading-2">
+                            <h2>Bill Details</h2>
+                            </div>
+                                <div class="product-div-2">
+                                            <div class="product-detail-2">
+                                                <div class="product-name-2">                       
+                                                    <h5> Total item price</h5>
+                                                        <h5>₹1999</h5>
+                                                </div>
+                                                <div class="line"></div>
+                                                    <div class="lens-2">
+                                                        <h5>Total discount</h5>
+                                                        <h5>₹1999</h5>
+                                                    </div>
+                                                <div class="line"></div>
+                                                    <div class="final-price-2">
+                                                    <h4>Total payable</h4>
+                                                    <h4>₹1999</h4>
+                                                </div>
+                                            </div>
+                                </div>
+                                                <div class="button-cheakout">
+                                                    <button>Proceed To Cheakout ></button>
+                                                </div>
+            </div>
+
+          
+        </div>
+
+
+    </div>
+
+
+                    
+
+             
 </body>
 </html>
