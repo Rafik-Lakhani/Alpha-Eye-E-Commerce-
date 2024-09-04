@@ -7,10 +7,10 @@
                 </a>
                 <h3>Elevate Your Look. Sharpen Your Style.</h3>
                 <div class="media-link">
-                    <a href="#" target="_blank"><i class="ri-instagram-line"></i></a>
-                    <a href="#" target="_blank"><i class="ri-facebook-circle-line"></i></a>
-                    <a href="#" target="_blank"><i class="ri-twitter-x-fill"></i></a>
-                    <a href="#" target="_blank"><i class="ri-youtube-line"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-line"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-circle-line"></i></a>
+                    <a href="https://x.com/" target="_blank"><i class="ri-twitter-x-fill"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank"><i class="ri-youtube-line"></i></a>
                 </div>
         </div>
         <div class="link-part">
@@ -23,9 +23,9 @@
             </div>
             <div class="section">
                 <h3>User Related</h3>
-                <a href="#">Profile</a>
-                <a href="#">Order</a>
-                <a href="#">Logout</a>
+                <a href="profile.php">Profile</a>
+                <a href="order.php">Order</a>
+                <a href="logout.php">Logout</a>
             </div>
             <div class="section">
                 <h3>Contact US</h3>

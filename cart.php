@@ -10,6 +10,7 @@
 <?php 
 $totalprice=0;
 $discount=0;
+$totalmrp=0;
 
        
         include("config/dbconnect.php");
@@ -42,6 +43,9 @@ $discount=0;
                                     $fetchproduct="select * from product where productid = $cartdata[productid]";
                                     $productresult=mysqli_query($con,$fetchproduct);
                                     $productdata=mysqli_fetch_assoc($productresult);
+
+                                    
+
                                     if($cartdata['powertype']!=null){
                                         ?>
                                              <div class=cart-first>
@@ -50,8 +54,13 @@ $discount=0;
                                             
                                             <div class="product-detail">
                                                 <div class="product-name">                       
-                                                    <h3><?= $productdata['name']; ?></h3>
-                                                    <h5>₹<?php
+                                                    <h3 class="productname"><?= $productdata['name']; ?></h3>
+                                                    <h5>
+                                                        <span class="mrpprice">₹<?php 
+                                                            $mrp=$productdata['mrp']*$cartdata['quantity'];
+                                                            echo $mrp;
+                                                        ?></span>
+                                                        ₹<?php
                                                         $productprice=$productdata['sellingprice']*$cartdata['quantity']; 
                                                         echo $productprice;
                                                         ?></h5>
@@ -72,6 +81,7 @@ $discount=0;
                                                                 $totalproductprice=$lenseprice+$productprice;
                                                                 echo $totalproductprice;
                                                                 $totalprice+=$totalproductprice;
+                                                                $totalmrp+=(($productdata['mrp']+$cartdata['lensprice'])*$cartdata['quantity']);
                                                             ?>
                                                         </h6>
                                                     </div>
@@ -79,13 +89,19 @@ $discount=0;
                                                 
                                                 <div class="quantity-wrapper">
                                                 <span>
-                                                    <button type="text">remove</button>
+                                                    <a 
+                                                    href="addcart.php?action=deleteproduct&cartid=<?php echo $cartdata['cartid']; ?>">
+                                                        <button type="text">Remove</button>
+                                                    </a>
                                                 </span>
                                                     <div class= "quantity-wrapper-2">
-                                                        <button class="quantity-button" id="remove-btn">-</button>
-                                                        <input type="text" id="quantity"
-                                                        value="<?= $cartdata['quantity']; ?>">
-                                                        <button class="quantity-button" id="add-btn">+</button>
+                                                        <form action="addcart.php" method="get">
+                                                            <input type="hidden" name= 'action' value="updatequantity">
+                                                            <input type="hidden" name="cartid" value="<?= $cartdata['cartid']?>">
+                                                            <input type="number" id="quantity" name="quantity" max="10" min="1"
+                                                            value="<?php echo $cartdata['quantity']; ?>">
+                                                            <input type="submit" style="display:none">
+                                                        </form>
                                                     </div>
                                                 </div>
 
@@ -102,22 +118,35 @@ $discount=0;
                                             
                                             <div class="product-detail">
                                                 <div class="product-name">                       
-                                                    <h3><?= $productdata['name']; ?></h3>
-                                                    <h5>₹<?php
+                                                    <h3 class="productname"><?= $productdata['name']; ?></h3>
+                                                    <h5>
+                                                        <span class="mrpprice">₹<?php 
+                                                            $mrp=$productdata['mrp']*$cartdata['quantity'];
+                                                            echo $mrp;
+                                                        ?></span>
+                                                        ₹<?php
                                                         $productprice=$productdata['sellingprice']*$cartdata['quantity']; 
                                                         echo $productprice;
                                                         $totalprice += $productprice;
+                                                        $totalmrp+=($productdata['mrp']*$cartdata['quantity']);
                                                     ?></h5>
                                                 </div>                                                
                                                 <div class="quantity-wrapper">
                                                 <span>
-                                                    <button type="text">remove</button>
+                                                    <a 
+                                                    href="addcart.php?action=deleteproduct&cartid=<?php echo $cartdata['cartid']; ?>">
+                                                        <button type="text">Remove</button>
+                                                    </a>
                                                 </span>
                                                     <div class= "quantity-wrapper-2">
-                                                        <button class="quantity-button" id="remove-btn">-</button>
-                                                        <input type="text" id="quantity"
-                                                        value="<?php echo $cartdata['quantity']; ?>">
-                                                        <button class="quantity-button" id="add-btn">+</button>
+                                                        <form action="addcart.php" method="get">
+                                                            <input type="hidden" name= 'action' value="updatequantity">
+                                                            <input type="hidden" name="cartid" value="<?= $cartdata['cartid']?>">
+                                                            <input type="number" id="quantity" name="quantity" max="10" min="1"
+                                                            value="<?php echo $cartdata['quantity']; ?>">
+                                                            <input type="submit" style="display:none">
+                                                        </form>
+                                                        
                                                     </div>
                                                 </div>
 
@@ -147,10 +176,16 @@ $discount=0;
                                 <div class="product-div-2">
                                             <div class="product-detail-2">
                                                 <div class="product-name-2">                       
-                                                    <h5> Total price</h5>
-                                                        <h5>₹<?= $totalprice ?></h5>
+                                                    <h5> Total MRP</h5>
+                                                        <h5>₹<?= $totalmrp ?></h5>
                                                 </div>
-                                                <div class="line"></div>
+                                                <div class="product-name-2">                       
+                                                    <h5> Total Discount</h5>
+                                                        <h5>₹<?php 
+                                                            $discount = $totalmrp -$totalprice;
+                                                            echo $discount;
+                                                        ?></h5>
+                                                </div>
                                                     <div class="lens-2">
                                                         <h5>Other Charge</h5>
                                                         <h5>₹0</h5>

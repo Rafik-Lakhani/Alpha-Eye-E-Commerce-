@@ -160,7 +160,6 @@ nav{
     position: relative;
 }
 .category:hover .category-div{
-    /* top: 50px; */
     display: flex;
     opacity: 1;
 }

@@ -5,7 +5,7 @@
         session_start();
     ?>
     <?php
-    if(isset($_GET["type"])){
+  
 
         if(isset($_SESSION["email"]) && isset($_SESSION["role"]))
          {
@@ -15,11 +15,11 @@
                 $data = mysqli_fetch_assoc($result);
 
                 if($_GET['action']=="addproduct"){
-
+                            
                         if($_GET['type']=="onlyframe"){
                                 $productid=$_GET['productid'];
 
-                                $insert="INSERT INTO `cart`(`userid`, `productid`) VALUES ($data[id] ,$productid)";
+                                $insert="INSERT INTO cart(userid, productid) VALUES ($data[id] ,$productid)";
                                 $ans=mysqli_query($con, $insert);
                                 if($ans==false){
                                     header("Location: $_SERVER[HTTP_REFERER]");
@@ -34,7 +34,7 @@
                                 $lenseprice=$_GET['lenseprice'];
                                 $productid=$_GET['productid'];
 
-                                $insert="INSERT INTO `cart`( `userid`, `productid`, `powertype`, `lenstype`, `lensprice`) VALUES ($data[id], $productid, '$powertype', '$lensetype', $lenseprice)";
+                                $insert="INSERT INTO cart( userid, productid, powertype, lenstype, lensprice) VALUES ($data[id], $productid, '$powertype', '$lensetype', $lenseprice)";
 
                                 echo $insert;
                                 $ans=mysqli_query($con, $insert);
@@ -48,15 +48,27 @@
                         }
                 }
                 // here more requests come add check which request work example=delete count update request
-                // else{
-                    
-                // }
+
+                else if($_GET['action']=="deleteproduct"){
+                    $cartid=$_GET['cartid'];
+
+                    $delete="DELETE FROM cart WHERE cartid=$cartid";
+                     $ans=mysqli_query($con, $delete);
+                     header("Location:cart.php");
+                }
+                else if($_GET['action']=="updatequantity"){
+                    $cartid=$_GET['cartid'];
+                    $quantity=$_GET['quantity'];
+
+                    $updatecart="UPDATE cart SET quantity=$quantity WHERE cartid=$cartid";
+                     $ans=mysqli_query($con, $updatecart);
+                     header("Location: cart.php");
+                }
+                
         }
         else{
-            header("Location: singin.php");
+             header("Location: singin.php");
         }
-    }
-    else{
-        header("Location: $_SERVER[HTTP_REFERER]");
-    }
+    
+   
  ?>
