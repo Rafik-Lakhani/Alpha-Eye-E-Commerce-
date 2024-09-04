@@ -12,6 +12,7 @@
     include("component/adminnav.php");
     include("../config/fontfamily.php");
     include("component/authenticate.php");
+    include("../config/dbconnect.php");
     ?>
      <div class="deshboard">
             <div class="top-sec">
@@ -51,7 +52,11 @@
                 <i class="ri-user-add-line"></i>    
             </div>
             <h1>
-                10
+                <?php 
+                    $selectnew="select count(*) from userdata where joindate >= DATE_SUB(CURRENT_DATE, INTERVAL 3 MONTH) ";
+                    $resultnew=mysqli_query($con,$selectnew);
+                    echo mysqli_num_rows($resultnew);
+                ?>
             </h1>
             <h4>
                 New Coustomer

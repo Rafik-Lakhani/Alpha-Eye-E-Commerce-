@@ -103,6 +103,7 @@
                     <form method="get" action="viewproduct.php">
                         <input type="text" name="searchquery" placeholder="Search Product">
                         <input type="submit" name="search" style="display:none">
+                        <h3>No recent searches</h3>
                     </form>
                     <button id="closesearch">
                         <i class="ri-close-circle-line"></i>

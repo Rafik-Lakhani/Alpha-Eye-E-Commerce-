@@ -58,7 +58,7 @@ html,body{
 .box{
     color: #000;
     background-color: #ffe2e6;
-    width: 12%;
+    width: 13%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;

@@ -13,26 +13,35 @@
         <div class="center-nav">
             <ul>
                 <li id="<?php if($pagenm=="index.php"){ echo"active"; } ?>">
-                    <i class="ri-dashboard-line"></i>
-                    <a class="active-a" href="../admin">Dashboard</a>
+                    <a class="active-a" href="../admin">
+                        <i class="ri-dashboard-line"></i>
+                        Dashboard
+                    </a>
                 </li>
                 <li id="<?php if($pagenm=="orderadmin.php"){ echo "active"; }?>">
-                    <i class="ri-shopping-cart-2-line"></i>
-                    <a href="orderadmin.php">Order</a>
+                    <a href="orderadmin.php">
+                        <i class="ri-shopping-cart-2-line"></i>
+                        Order
+                    </a>
                 </li>
                 <li id="<?php if($pagenm=="additem.php"){ echo "active"; }?>">
-                    <i class="ri-truck-line"></i>
-                    <a href="additem.php">Add product</a>
+                    <a href="additem.php">
+                        <i class="ri-truck-line"></i>
+                        Add product
+                    </a>
                 </li>
                 <li id="<?php if($pagenm=="admincatagory.php"){ echo "active"; }?>">
-                    <i class="ri-file-list-3-line"></i>
-                    <a href="admincatagory.php">Category</a>
+                    <a href="admincatagory.php">
+                        <i class="ri-file-list-3-line"></i>
+                        Category
+                    </a>
                 </li>
                 <li id="<?php if($pagenm=="user.php"){ echo "active"; }?>">
-                    <i class="ri-user-line"></i>
-                    <a href="user.php">User</a>
+                    <a href="user.php">
+                        <i class="ri-user-line"></i>
+                        User
+                    </a>
                 </li>
-
             </ul>
        
         </div>

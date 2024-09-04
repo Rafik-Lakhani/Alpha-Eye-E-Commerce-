@@ -38,3 +38,4 @@
         </form>
     </div>
 </div>
+<?php include("component/footer.php");?>

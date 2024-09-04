@@ -179,7 +179,7 @@
                     }?>
             </div>
         <!-- end add Similar Products -->
-        <!-- <?php include("component/footer.php");?>  Include footer -->
+        <?php include("component/footer.php");?> 
     </div>
     <script src="jsScript/product.js"></script>
 </body>
