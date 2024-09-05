@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2024 at 11:23 AM
+-- Generation Time: Sep 05, 2024 at 04:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -43,10 +43,12 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cartid`, `userid`, `productid`, `addingtime`, `quantity`, `powertype`, `lenstype`, `lensprice`) VALUES
-(1, 52, 3, '2024-08-29 11:55:01', 1, NULL, NULL, NULL),
-(2, 52, 1, '2024-08-29 12:43:05', 1, NULL, NULL, NULL),
-(3, 52, 2, '2024-08-29 12:47:06', 1, 'Zero Power Eyeglasses', 'Blue Filter+', 1000),
-(4, 52, 5, '2024-08-29 12:47:45', 1, 'Bifocal/Progressive Eyeglasses', 'Neo Digi with Anti Reflect', 2500);
+(4, 50, 1, '2024-09-03 13:32:45', 1, NULL, NULL, NULL),
+(5, 50, 3, '2024-09-03 13:32:47', 1, NULL, NULL, NULL),
+(6, 50, 5, '2024-09-03 13:32:49', 1, NULL, NULL, NULL),
+(7, 41, 2, '2024-09-04 09:35:15', 1, NULL, NULL, NULL),
+(8, 41, 2, '2024-09-04 09:38:09', 1, 'Bifocal/Progressive Eyeglasses', 'Neo Digi with Anti Reflect', 2500),
+(17, 40, 2, '2024-09-04 11:20:31', 10, 'Single Vision/Powered Eyeglasses', 'Basic', 800);
 
 -- --------------------------------------------------------
 
@@ -71,6 +73,24 @@ INSERT INTO `categories` (`catid`, `men`, `women`, `status`, `setboth`, `image`)
 (1, 'Aviator', NULL, 'show', NULL, '66c96fb8cdb7e.webp'),
 (2, 'Geometric', NULL, 'show', NULL, '66c96fc268615.webp'),
 (3, NULL, 'CatEye', 'show', NULL, '66c96fce0823a.webp');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `orderid` int(11) NOT NULL,
+  `productid` int(11) DEFAULT NULL,
+  `userid` int(11) DEFAULT NULL,
+  `quantity` int(11) NOT NULL DEFAULT 1,
+  `powertype` varchar(255) DEFAULT NULL,
+  `lenstype` varchar(255) DEFAULT NULL,
+  `lensprice` int(11) DEFAULT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'Ordered',
+  `placeddate` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -124,13 +144,6 @@ CREATE TABLE `useraddres` (
   `pincode` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `useraddres`
---
-
-INSERT INTO `useraddres` (`userid`, `Phonenumber`, `street`, `city`, `state`, `country`, `pincode`) VALUES
-(40, 12322, '12', '12', '12', '12', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -152,7 +165,29 @@ CREATE TABLE `userdata` (
 
 INSERT INTO `userdata` (`id`, `username`, `useremail`, `password`, `status`, `joindate`) VALUES
 (40, 'rafik', 'lakhanirafik111@gmail.com', '$2y$10$xQC.UslJFvCFD/u2n5qLG.4PTvcfVf41HNl4gmNrcAiwV7IVIZhL6', 0, '2024-07-12 11:05:54'),
-(41, 'rafik', 'admin@admin.com', '$2y$10$.VFsnvBF./r6flaGIUzuqejoXJj1mBAEIbJ24ssKiB4eKWXUPN5Ra', 1, '2024-07-12 11:30:25');
+(41, 'rafik', 'admin@admin.com', '$2y$10$.VFsnvBF./r6flaGIUzuqejoXJj1mBAEIbJ24ssKiB4eKWXUPN5Ra', 1, '2024-07-12 11:30:25'),
+(50, 'rafik', 'demo@demo', '$2y$10$NE4.s0jlC5.87CcIWd85hOiUx47rOUmZLZ1jZFjcDXzfDKr8yeBpK', 0, '2024-09-03 13:32:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userprescription`
+--
+
+CREATE TABLE `userprescription` (
+  `prescriptionid` int(11) NOT NULL,
+  `orderid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `productid` int(11) NOT NULL,
+  `leftSPH` float NOT NULL,
+  `rightSPH` float NOT NULL,
+  `leftCYL` float NOT NULL,
+  `rightCYL` float NOT NULL,
+  `leftAXIS` float NOT NULL,
+  `rightAXIS` int(11) NOT NULL,
+  `leftADD` float NOT NULL,
+  `rightADD` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -169,6 +204,12 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`catid`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`orderid`);
 
 --
 -- Indexes for table `product`
@@ -190,6 +231,12 @@ ALTER TABLE `userdata`
   ADD UNIQUE KEY `useremail` (`useremail`);
 
 --
+-- Indexes for table `userprescription`
+--
+ALTER TABLE `userprescription`
+  ADD PRIMARY KEY (`prescriptionid`) USING BTREE;
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -197,13 +244,19 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -215,7 +268,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT for table `userprescription`
+--
+ALTER TABLE `userprescription`
+  MODIFY `prescriptionid` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
