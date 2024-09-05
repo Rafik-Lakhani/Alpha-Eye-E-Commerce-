@@ -38,4 +38,38 @@ if(isset($_POST['useraddress'])){
         }
        
 }
+
+
+// here add store in check out page
+
+if(isset($_POST['address'])){
+    session_start();
+    $phone=$_POST['phoneno'];
+    $street=$_POST['street'];
+    $city=$_POST['city'];
+    $state=$_POST['state'];
+    $country=$_POST['country'];
+    $pincode=$_POST['pincode'];
+
+
+    $email=$_SESSION['email'];
+   $fetchuser="select * from userdata where useremail='$email'";
+    $result=mysqli_query($con,$fetchuser);
+    $data=mysqli_fetch_array($result);
+
+    $select="SELECT * FROM `useraddres` WHERE userid=$data[id]";
+    $ans=mysqli_query($con,$select);
+        if(mysqli_num_rows($ans)>0){
+            $update="UPDATE `useraddres` SET `Phonenumber`='$phone',`street`='$street',`city`='$city',`state`='$state',`country`='$country',`pincode`='$pincode' WHERE userid=$data[id]";
+            
+            mysqli_query($con,$update);
+            header("Location:address.php");
+        }
+        else{
+            $insert="INSERT INTO `useraddres`(`userid`,`Phonenumber`, `street`, `city`, `state`, `country`, `pincode`) VALUES ($data[id],'$phone','$street','$city','$state','$country','$pincode')";
+            mysqli_query($con,$insert);
+            header("Location:address.php");
+        }
+        
+}
 ?>

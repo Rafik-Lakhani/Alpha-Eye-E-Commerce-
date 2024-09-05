@@ -198,7 +198,9 @@ $totalmrp=0;
                                             </div>
                                 </div>
                                      <div class="button-cheakout">
-                                        <button>Proceed To Cheakout ></button>
+                                         <a href="address.php">
+                                             <button>Proceed To Cheakout ></button>
+                                         </a>
                                     </div>
                     </div>
             </div>   
