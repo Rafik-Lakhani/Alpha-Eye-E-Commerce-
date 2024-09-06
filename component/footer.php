@@ -29,9 +29,9 @@
             </div>
             <div class="section">
                 <h3>Contact US</h3>
-                <h5><span>Email</span>:alphaeye@info.com</h5>
-                <h5><span>Number</span>:+91 1234567890</h5>
-                <h5><span>City</span>:Surendranagar</h5>
+                <h5><span><i class="ri-mail-line"></i></span>alphaeye@info.com</h5>
+                <h5><span><i class="ri-customer-service-2-line"></i></span>+91 1234567890</h5>
+                <h5><span><i class="ri-building-line"></i></span>Surendranagar</h5>
             </div>
         </div>
     </div>

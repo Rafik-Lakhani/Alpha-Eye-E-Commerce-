@@ -23,9 +23,9 @@
             </div>
             <div class="center-nav">
                 <ol class="list">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php">Home<span></span></a></li>
                     <li class="category">
-                            Category
+                        Category<span></span>
                                 <div class="category-div">
                                     <div class="image-sec">
                                         <img src="assets/staticimg/Men-icon.jpg" alt="" srcset="" 
@@ -65,8 +65,8 @@
                                     </div>
                                 </div>
                     </li>
-                    <li><a href="viewproduct.php">Product</a></li>
-                    <li><a href="contect.php">AboutUs</a></li>
+                    <li><a href="viewproduct.php">Product<span></span></a></li>
+                    <li><a href="contect.php">AboutUs <span></span></a></li>
                 </ol>
             </div>
             <div class="right-nav">

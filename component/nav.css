@@ -60,6 +60,7 @@ nav{
 .center-nav ol li{
     font-size: 1.05rem;
     list-style: none;
+    position: relative;
 }
 .center-nav ol li a{
     font-size: 1.05rem;
@@ -159,10 +160,13 @@ nav{
     z-index: 1;
     position: relative;
 }
+
 .category:hover .category-div{
     display: flex;
     opacity: 1;
 }
+
+
 
 .category-div{
     position: fixed;
@@ -335,3 +339,43 @@ nav{
 .menu-div ul li a i{
     margin-right: 10px;
 }
+
+/* here nav bar hover effect css */
+.center-nav ol li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.center-nav ol li a:hover{
+    color: #000;
+}
+
+.center-nav ol li a span{
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #0000007c;
+    z-index: -1;
+    border-bottom:2px solid #000; 
+    border-top:1px solid #0000006d; 
+    border-radius: 15px;
+    transform: scale(0) translateY(50px);
+    opacity: 0;
+    transition: all ease 0.5s;
+    align-self: center;
+    
+}
+
+.center-nav ol li a:hover span{
+    /* transform: translate(-50%,-50%); */
+    transform: scale(1) translateY(-5px) translateX(-18%);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    opacity: 1;
+}
+
+
+
+/* here category hover effect css */

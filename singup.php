@@ -21,7 +21,7 @@
 
             <div class="pass">
            <label for="Password" class="password">password</label>
-           <input type="text" name="password" placeholder="Enter Password" required>
+           <input type="text" name="password" id="password" placeholder="Enter Password" required>
            <i class="ri-eye-off-line" id="password-eye"></i>
             </div>
 
@@ -40,4 +40,20 @@
         </form>
     </div>
 </div>
+
+<script>
+     document.getElementById('password-eye').addEventListener('click', function(){
+        var password = document.getElementById('password');
+        if(password.type === 'password'){
+            password.type = 'text';
+            document.getElementById('password-eye').classList.remove('ri-eye-off-line');
+            document.getElementById('password-eye').classList.add('ri-eye-fill');
+        }else{
+            password.type = 'password';
+            document.getElementById('password-eye').classList.remove('ri-eye-fill');
+            document.getElementById('password-eye').classList.add('ri-eye-off-line');
+        }
+    });
+</script>
+
 <?php include("component/footer.php");?>

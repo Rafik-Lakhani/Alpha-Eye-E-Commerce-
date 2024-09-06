@@ -6,6 +6,7 @@ footer{
     flex-direction: column;
     border-top: 2px solid #000;
     background-color:transparent;
+    transition: all ease 0.3s;
 }
 
 .links{
@@ -86,8 +87,25 @@ footer{
     font-weight: 500;
     margin-top: 3px;
 }
+.link-part .section h5 span{
+    margin-right: 5px;
+    font-size: 1rem;
+    transition: all ease 0.3s;
+}
 
 .copyright{
     align-self: center;
     margin-top: 20px;
+}
+
+footer a:hover{
+    color: #0000007c;
+}
+
+footer .link-part .section a:hover{
+    color: #0000007c;
+}
+
+.link-part .section h5:hover{
+    color: #0000007c;
 }

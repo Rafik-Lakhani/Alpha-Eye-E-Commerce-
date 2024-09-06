@@ -38,4 +38,20 @@
         </form>
     </div>
 </div>
+
+<script>
+    document.getElementById('pw-eye').addEventListener('click', function(){
+        var password = document.getElementById('password');
+        if(password.type === 'password'){
+            password.type = 'text';
+            document.getElementById('pw-eye').classList.remove('ri-eye-off-line');
+            document.getElementById('pw-eye').classList.add('ri-eye-fill');
+        }else{
+            password.type = 'password';
+            document.getElementById('pw-eye').classList.remove('ri-eye-fill');
+            document.getElementById('pw-eye').classList.add('ri-eye-off-line');
+        }
+    });
+</script>
+
 <?php include("component/footer.php");?>
