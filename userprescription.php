@@ -12,7 +12,7 @@
         <?php include("config/fontfamily.php");?>
         <?php include("component/nav.php");?>
         <div class="center-div">
-            <form action="">
+            <form action="order.php" method="post">
                 <div class="power-part">
                         <div class="power-heading">
                             <h2>SPH</h2>
@@ -167,7 +167,7 @@
                             <option value="6.00">+6.00</option>
                             </select>
                              
-                            <input type="number" min="0" max="180">
+                            <input type="number" min="0" name="rightaxis" max="180">
                                 <select name="rightadd" id="">
                                     <option value="1">1</option>
                                     <option value="1">1</option>
@@ -178,7 +178,7 @@
                             </div>
                             <div class="left-eye">
                                 <h2>LEFT EYE(OS)</h2>
-                                <select name="rightsph" id="">
+                                <select name="leftsph" id="">
                               
   <!-- Negative Sph Powers -->
                                 <option value="-0.25">-0.25</option>
@@ -269,7 +269,7 @@
                                 <option value="+8.00">+8.00</option>
                                 </select>
                                     
-                                <select name="rightcyl" id="">
+                                <select name="leftcyl" id="">
                                 <option value="-0.25">-0.25</option>
                             <option value="-0.50">-0.50</option>
                             <option value="-0.75">-0.75</option>
@@ -322,7 +322,7 @@
                             <option value="6.00">+6.00</option>
                             </select>
                             
-                                <input type="number" min="0" max="180">
+                                <input type="number" min="0" name="leftaxis" max="180">
                                 <select name="leftadd" id="">
                                     <option value="1">1</option>
                                     <option value="1">1</option>
@@ -340,7 +340,7 @@
                         <label for="cod">Cash ON Delivery</label>
                     </div>
                     <div class="submit-div">
-                        <input type="submit" value="Submit">
+                        <input type="submit" name="userprescriptionpage" value="Submit">
                     </div>    
                 </div>
             </form>

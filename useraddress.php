@@ -63,12 +63,12 @@ if(isset($_POST['address'])){
             $update="UPDATE `useraddres` SET `Phonenumber`='$phone',`street`='$street',`city`='$city',`state`='$state',`country`='$country',`pincode`='$pincode' WHERE userid=$data[id]";
             
             mysqli_query($con,$update);
-            header("Location:address.php");
+            header("Location:userprescription.php");
         }
         else{
             $insert="INSERT INTO `useraddres`(`userid`,`Phonenumber`, `street`, `city`, `state`, `country`, `pincode`) VALUES ($data[id],'$phone','$street','$city','$state','$country','$pincode')";
             mysqli_query($con,$insert);
-            header("Location:address.php");
+            header("Location:userprescription.php");
         }
         
 }
