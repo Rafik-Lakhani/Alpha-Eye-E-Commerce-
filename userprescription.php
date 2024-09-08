@@ -23,9 +23,10 @@
                         <div class="power-heading2">
                             <div class="right-eye">
                                 <h2>RIGHT EYE(OD)</h2>
-                                <select name="rightsph" id="">
-                             
-  <!-- Negative Sph Powers -->
+                                <select required name="rightsph" id="">
+                                    
+                                    <!-- Negative Sph Powers -->
+                                <option value="0.00">0.00</option>
                                 <option value="-0.25">-0.25</option>
                                 <option value="-0.50">-0.50</option>
                                 <option value="-0.75">-0.75</option>
@@ -114,7 +115,8 @@
                                 <option value="+8.00">+8.00</option>
                                 </select>
                                                                 
-                            <select name="rightcyl" id="">
+                            <select name="rightcyl" required id="">
+                            <option value="0.00">0.00</option>
                             <option value="-0.25">-0.25</option>
                             <option value="-0.50">-0.50</option>
                             <option value="-0.75">-0.75</option>
@@ -167,8 +169,9 @@
                             <option value="6.00">+6.00</option>
                             </select>
                              
-                            <input type="number" min="0" name="rightaxis" max="180">
-                                <select name="rightadd" id="">
+                            <input type="number" min="0" value="00" name="rightaxis" max="180">
+                                <select name="rightadd" required id="">
+                                    <option value="0">0.00</option>
                                     <option value="1">1</option>
                                     <option value="1">1</option>
                                     <option value="1">1</option>
@@ -178,9 +181,10 @@
                             </div>
                             <div class="left-eye">
                                 <h2>LEFT EYE(OS)</h2>
-                                <select name="leftsph" id="">
+                                <select required name="leftsph" id="">
                               
   <!-- Negative Sph Powers -->
+                                <option value="0.00">0.00</option>
                                 <option value="-0.25">-0.25</option>
                                 <option value="-0.50">-0.50</option>
                                 <option value="-0.75">-0.75</option>
@@ -269,7 +273,8 @@
                                 <option value="+8.00">+8.00</option>
                                 </select>
                                     
-                                <select name="leftcyl" id="">
+                                <select name="leftcyl" required id="">
+                                <option value="0.00">0.00</option>
                                 <option value="-0.25">-0.25</option>
                             <option value="-0.50">-0.50</option>
                             <option value="-0.75">-0.75</option>
@@ -322,8 +327,9 @@
                             <option value="6.00">+6.00</option>
                             </select>
                             
-                                <input type="number" min="0" name="leftaxis" max="180">
-                                <select name="leftadd" id="">
+                                <input type="number" required min="0" value="00" name="leftaxis" max="180">
+                                <select name="leftadd" id="" required>
+                                    <option value="0.00">0.00</option>
                                     <option value="1">1</option>
                                     <option value="1">1</option>
                                     <option value="1">1</option>

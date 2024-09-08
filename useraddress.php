@@ -57,6 +57,8 @@ if(isset($_POST['address'])){
     $result=mysqli_query($con,$fetchuser);
     $data=mysqli_fetch_array($result);
 
+    
+
     $select="SELECT * FROM `useraddres` WHERE userid=$data[id]";
     $ans=mysqli_query($con,$select);
         if(mysqli_num_rows($ans)>0){

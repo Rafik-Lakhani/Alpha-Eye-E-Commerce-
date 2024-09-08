@@ -117,7 +117,7 @@
                         <li><a href="profile.php">
                             <i class="ri-shield-user-line"></i>Profile</a>
                         </li>
-                        <li><a href="order.php">
+                        <li><a href="userorder.php">
                             <i class="ri-truck-line"></i>Orders</a>
                         </li>
                         <li><a href="logout.php">

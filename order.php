@@ -46,7 +46,7 @@ if(isset($_POST["userprescriptionpage"])){
 
             // add user eye number in data base
 
-            $adduserpower="INSERT INTO `userprescription`(`orderid`, `userid`, `productid`, `leftSPH`, `rightSPH`, `leftCYL`, `rightCYL`, `leftAXIS`, `rightAXIS`, `leftADD`, `rightADD`) VALUES ($orderdata[orderid],$orderdata[userid],$orderdata[productid],$leftsph,$rightsph,$leftcyl,$rightcyl,$leftaxis,$rightaxis,$leftadd,$rightaxis)";
+            $adduserpower="INSERT INTO `userprescription`(`orderid`, `userid`, `productid`, `leftSPH`, `rightSPH`, `leftCYL`, `rightCYL`, `leftAXIS`, `rightAXIS`, `leftADD`, `rightADD`) VALUES ($orderdata[orderid],$orderdata[userid],$orderdata[productid],$leftsph,$rightsph,$leftcyl,$rightcyl,$leftaxis,$rightaxis,$leftadd,$rightadd)";
             $userpowerresult=mysqli_query($con,$adduserpower);
         }
 
@@ -62,4 +62,6 @@ if(isset($_POST["userprescriptionpage"])){
     }
 
 }
+
+
 ?>
