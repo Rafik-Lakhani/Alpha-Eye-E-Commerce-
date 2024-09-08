@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2024 at 04:55 PM
+-- Generation Time: Sep 08, 2024 at 09:18 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -48,7 +48,7 @@ INSERT INTO `cart` (`cartid`, `userid`, `productid`, `addingtime`, `quantity`, `
 (6, 50, 5, '2024-09-03 13:32:49', 1, NULL, NULL, NULL),
 (7, 41, 2, '2024-09-04 09:35:15', 1, NULL, NULL, NULL),
 (8, 41, 2, '2024-09-04 09:38:09', 1, 'Bifocal/Progressive Eyeglasses', 'Neo Digi with Anti Reflect', 2500),
-(17, 40, 2, '2024-09-04 11:20:31', 10, 'Single Vision/Powered Eyeglasses', 'Basic', 800);
+(19, 51, 1, '2024-09-05 15:08:03', 4, 'Zero Power Eyeglasses', 'Blue Filter+', 1000);
 
 -- --------------------------------------------------------
 
@@ -89,8 +89,16 @@ CREATE TABLE `order` (
   `lenstype` varchar(255) DEFAULT NULL,
   `lensprice` int(11) DEFAULT NULL,
   `status` varchar(255) NOT NULL DEFAULT 'Ordered',
-  `placeddate` datetime NOT NULL DEFAULT current_timestamp()
+  `placeddate` datetime NOT NULL DEFAULT current_timestamp(),
+  `amount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`orderid`, `productid`, `userid`, `quantity`, `powertype`, `lenstype`, `lensprice`, `status`, `placeddate`, `amount`) VALUES
+(7, 5, 40, 4, 'Bifocal/Progressive Eyeglasses', 'Neo Digi with Anti Reflect', 10000, 'Ordered', '2024-09-08 12:45:19', 26000);
 
 -- --------------------------------------------------------
 
@@ -144,6 +152,13 @@ CREATE TABLE `useraddres` (
   `pincode` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `useraddres`
+--
+
+INSERT INTO `useraddres` (`userid`, `Phonenumber`, `street`, `city`, `state`, `country`, `pincode`) VALUES
+(40, 1122, '1', '1', '1sss', '1', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -164,9 +179,10 @@ CREATE TABLE `userdata` (
 --
 
 INSERT INTO `userdata` (`id`, `username`, `useremail`, `password`, `status`, `joindate`) VALUES
-(40, 'rafik', 'lakhanirafik111@gmail.com', '$2y$10$xQC.UslJFvCFD/u2n5qLG.4PTvcfVf41HNl4gmNrcAiwV7IVIZhL6', 0, '2024-07-12 11:05:54'),
+(40, 'rafik', 'lakhanirafik111@gmail.com', '$2y$10$Oj4rJixT6dyJVkLG4JWkW.jJ/smwU.l/D8/tsO7O01Sv304rU3T/2', 0, '2024-07-12 11:05:54'),
 (41, 'rafik', 'admin@admin.com', '$2y$10$.VFsnvBF./r6flaGIUzuqejoXJj1mBAEIbJ24ssKiB4eKWXUPN5Ra', 1, '2024-07-12 11:30:25'),
-(50, 'rafik', 'demo@demo', '$2y$10$NE4.s0jlC5.87CcIWd85hOiUx47rOUmZLZ1jZFjcDXzfDKr8yeBpK', 0, '2024-09-03 13:32:22');
+(50, 'rafik', 'demo@demo', '$2y$10$NE4.s0jlC5.87CcIWd85hOiUx47rOUmZLZ1jZFjcDXzfDKr8yeBpK', 0, '2024-09-03 13:32:22'),
+(51, 'demo', 'refik@gamil.com', '$2y$10$I4ICkJWH/d3W7kArb5RiU.lIbu5g0iPsI.Ea8AqdOBFDRNbEddnxW', 0, '2024-09-05 15:07:55');
 
 -- --------------------------------------------------------
 
@@ -188,6 +204,13 @@ CREATE TABLE `userprescription` (
   `leftADD` float NOT NULL,
   `rightADD` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `userprescription`
+--
+
+INSERT INTO `userprescription` (`prescriptionid`, `orderid`, `userid`, `productid`, `leftSPH`, `rightSPH`, `leftCYL`, `rightCYL`, `leftAXIS`, `rightAXIS`, `leftADD`, `rightADD`) VALUES
+(4, 7, 40, 5, -0.25, -0.25, -0.25, -0.25, 66, 55, 1, 55);
 
 --
 -- Indexes for dumped tables
@@ -244,7 +267,7 @@ ALTER TABLE `userprescription`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -256,7 +279,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -268,13 +291,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `userprescription`
 --
 ALTER TABLE `userprescription`
-  MODIFY `prescriptionid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `prescriptionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
