@@ -38,7 +38,7 @@
                                             <h3>Men Category</h3>
                                             <?php while($men=mysqli_fetch_assoc($resultmen)){?>
                                             <h5>
-                                                <a href="viewproduct.php?category=<?php echo $men['men']; ?>">
+                                                <a class="catlink" href="viewproduct.php?category=<?php echo $men['men']; ?>">
                                                     <?php echo $men['men']; ?></a>
                                             </h5>
                                             <?php }?>
@@ -47,7 +47,7 @@
                                             <h3>Women Category</h3>
                                             <?php while($women=mysqli_fetch_assoc($resultwomen)){?>
                                             <h5>
-                                                <a href="viewproduct.php?category=<?php echo $women['women']; 
+                                                <a  class="catlink" href="viewproduct.php?category=<?php echo $women['women']; 
                                                 ?>">
                                                     <?php echo $women['women']; ?></a>
                                             </h5>
@@ -57,7 +57,7 @@
                                             <h3>Unisex Category</h3>
                                             <?php while($unisex=mysqli_fetch_assoc($resultunisex)){?>
                                             <h5>
-                                                <a href="viewproduct.php?category=<?php echo $men['setboth']; ?>">
+                                                <a class="catlink" href="viewproduct.php?category=<?php echo $men['setboth']; ?>">
                                                     <?php echo $unisex['setboth']; ?></a>
                                             </h5>
                                             <?php }?>

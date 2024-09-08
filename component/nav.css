@@ -170,18 +170,22 @@ nav{
 
 .category-div{
     position: fixed;
-    top: 50px;
+    top: 45px;
     background-color: #fff;
     margin: auto;
     transform: translate(-20%);
     display: none;
-    opacity: 0%;
+    opacity: 0;
     padding: 10px 30px;
     width: 450px;
     border-radius: 25px;
     transition: all linear 0.3s;
     z-index:999;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.catlink{
+    margin-bottom: 0px;
 }
 
 .image-sec{
@@ -343,7 +347,7 @@ nav{
 /* here nav bar hover effect css */
 .center-nav ol li a{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     align-self: center;
 }
@@ -370,7 +374,6 @@ nav{
 }
 
 .center-nav ol li a:hover span{
-    /* transform: translate(-50%,-50%); */
     transform: scale(1) translateY(-5px) translateX(-18%);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     opacity: 1;
