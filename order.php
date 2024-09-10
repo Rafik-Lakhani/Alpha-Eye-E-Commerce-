@@ -37,7 +37,7 @@ if(isset($_POST["userprescriptionpage"])){
             $addorder="INSERT INTO `order`(`productid`, `userid`, `quantity`, `powertype`, `lenstype`, `lensprice`, `amount`) VALUES ($row[productid],$row[userid],$row[quantity],'$row[powertype]','$row[lenstype]',$lensprice,$amount)";
             $orderresult=mysqli_query($con,$addorder);
 
-            if($orderresult && $row['powertype']!=null){
+            if($orderresult && isset($row['powertype'])){
                 $selectorder="select * from `order` where userid=$userdata[id] AND productid=$row[productid]";
 
             $orderselectresult=mysqli_query($con,$selectorder);

@@ -58,7 +58,7 @@ if(isset($_POST['address'])){
     $result=mysqli_query($con,$fetchuser);
     $data=mysqli_fetch_array($result);
 
-    $selectcart="select * from cart where userid=$data[id] AND powertype!=null";
+    $selectcart="select * from cart where userid=$data[id] AND powertype!='NULL'";
     $cartresult=mysqli_query($con,$selectcart);
 
     $select="SELECT * FROM `useraddres` WHERE userid=$data[id]";
