@@ -44,16 +44,18 @@
             </div>
             <div class="card-div">
                 <?php 
-                    $select ="SELECT * FROM product WHERE addingdate >= DATE_SUB(CURRENT_DATE, INTERVAL 1 MONTH) AND status='show'";
+                    $select ="SELECT * FROM product WHERE addingdate >= DATE_SUB(CURRENT_DATE, INTERVAL 1 MONTH) AND status='show' ORDER BY addingdate DESC";
                     $result1 = mysqli_query($con, $select);
                     $name="";
+                    $lenth=0;
                     while($row = mysqli_fetch_assoc($result1)){
-                        if($name==$row["name"]){
+                        if($name==$row["name"] || $lenth==3){
                             continue;
                         }
                         else{
                             $name=$row["name"];
-                    ?>
+                            $lenth+=1;
+                        ?>
                                 <div class="card">
                                     <a href="product.php?pname=<?php echo $row['name']  ?>&pid=<?php echo $row["productid"]; ?>">
                                     <img src="assets/images/<?php echo $row["img1"]; ?>" alt="main image">

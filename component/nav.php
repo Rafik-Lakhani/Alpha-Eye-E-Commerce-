@@ -66,7 +66,7 @@
                                 </div>
                     </li>
                     <li><a href="viewproduct.php">Product<span></span></a></li>
-                    <li><a href="contect.php">AboutUs <span></span></a></li>
+                    <li><a href="aboutus.php">AboutUs <span></span></a></li>
                 </ol>
             </div>
             <div class="right-nav">

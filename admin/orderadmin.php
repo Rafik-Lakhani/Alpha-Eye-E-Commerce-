@@ -30,7 +30,11 @@
                 <i class="ri-file-list-line"></i>
             </div>
             <h1>
-                100
+                <?php 
+                       $select="select * from `order` where status!='complet'";
+                        $result=mysqli_query($con,$select);
+                       echo mysqli_num_rows($result);
+                ?>
             </h1>
             <h4>
                Runing Orders
@@ -66,7 +70,11 @@
             <i class="ri-file-list-2-line"></i>  
             </div>
             <h1>
-                10
+                <?php 
+                    $select="select * from `order`";
+                    $result=mysqli_query($con,$select);
+                    echo mysqli_num_rows($result);
+                ?>
             </h1>
             <h4>
                 Total  Order 
