@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet/admindeshtop.css">
-    <title>Admin dashboard | Alphaeye</title>
+    <title>Order | Alphaeye</title>
 
     <link rel="stylesheet" href="orderadmin.css">
 </head>

@@ -14,6 +14,14 @@
     include("component/authenticate.php");
     include("../config/dbconnect.php");
     ?>
+
+
+    <?php 
+        // Get order details from database using session email
+
+        $selectorder="select * from `order` where status!='delivered'";
+        $orderresult=mysqli_query($con,$selectorder);
+        ?>
      <div class="deshboard">
             <div class="top-sec">
         <div class="box">
@@ -21,7 +29,14 @@
                 <i class="ri-file-list-line"></i>
             </div>
             <h1>
-                100
+                <?php 
+                    if($orderresult){
+                        echo mysqli_num_rows($orderresult);
+                    }
+                    else{
+                        echo "0";
+                    }
+                ?>
             </h1>
             <h4>
                 Current Orders
@@ -36,7 +51,12 @@
                 <i class="ri-bar-chart-box-line"></i>
             </div>
             <h1>
-                1000$
+                <?php $query="SELECT SUM(amount) AS total FROM `order`";
+                $result=mysqli_query($con,$query);
+                $ans=mysqli_fetch_array($result);
+
+                ?>
+                ₹<?= $ans['total'];?>
             </h1>
             <h4>
                 Total Sales
@@ -53,7 +73,7 @@
             </div>
             <h1>
                 <?php 
-                    $selectnew="select count(*) from userdata where joindate >= DATE_SUB(CURRENT_DATE, INTERVAL 3 MONTH) ";
+                    $selectnew="select * from userdata where joindate >= DATE_SUB(CURRENT_DATE, INTERVAL 3 MONTH) ";
                     $resultnew=mysqli_query($con,$selectnew);
                     echo mysqli_num_rows($resultnew);
                 ?>
@@ -65,9 +85,18 @@
         </div>
 
 
+      
+
             </div>
             <div class="center-sec">
-        <h1>Recent Orders</h1>
+        <?php 
+        if(!$orderresult){
+            echo "<h1 style='color:black'>NO Running Order</h1>";
+            exit();
+        }
+        ?>
+        <h1>Running Orders</h1>
+
         <!-- table heading -->
         <div class="order-heading">
             <div class="oder-id">
@@ -84,50 +113,42 @@
             </div>
             <div class="action">
                 <h3>Action</h3>
-            </din>
-        </div>
+            </div>
         </div>
 
         <!-- here table data show start -->
 
-        <div class="order-data">
-            <div class="oder-id">
-                <h3>1</h3>
-            </div>
-            <div class="details">
-                <h3>Sunglass</h3>
-            </div>
-            <div class="price">
-                <h3>3000</h3>
-            </div>
-            <div class="status">
-                <h3>Running</h3>
-            </div>
-            <div class="action">
-                <h3><a href=""><i class="ri-arrow-right-s-line"></i></a></h3>
-            </din>
-        </div>
-      
-        
 
-        
-</div>
-        <div class="order-data">
-            <div class="oder-id">
-                <h3>1</h3>
-            </div>
-            <div class="details">
-                <h3>Sunglass</h3>
-            </div>
-            <div class="price">
-                <h3>3000</h3>
-            </div>
-            <div class="status">
-                <h3>Running</h3>
-            </div>
-            <div class="action">
-                <h3><a href=""><i class="ri-arrow-right-s-line"></i></a></h3>
-            </din>
+        <?php 
+            while($order=mysqli_fetch_assoc($orderresult)){
+                $productselect="select * from product where productid=$order[productid]";
+                $productresult=mysqli_query($con,$productselect);
+                $productdata=mysqli_fetch_array($productresult);
+                ?>
+                 <div class="order-data">
+                    <div class="oder-id">
+                        <h3><?= $order['orderid'];?></h3>
+                    </div>
+                    <div class="details">
+                        <h3><?= $productdata['name'];?></h3>
+                    </div>
+                    <div class="price">
+                        <h3><?= $order['amount'];?></h3>
+                    </div>
+                    <div class="status">
+                        <h3><?= $order['status'];?></h3>
+                    </div>
+                    <div class="action">
+                        <h3><a href="vieworder.php?orderid=<?= $order['orderid'];?>">
+                            <i class="ri-arrow-right-s-line"></i>
+                            </a>
+                        </h3>
+                    </div>
+                    
+             </div>
+             <?php
+            }
+        ?>
         </div>
 
 

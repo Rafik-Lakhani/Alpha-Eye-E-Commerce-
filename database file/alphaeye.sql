@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 10, 2024 at 09:43 AM
+-- Generation Time: Sep 12, 2024 at 10:40 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -39,15 +39,15 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `lenstype` varchar(255) DEFAULT NULL,
   `lensprice` int(11) DEFAULT NULL,
   PRIMARY KEY (`cartid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`cartid`, `userid`, `productid`, `addingtime`, `quantity`, `powertype`, `lenstype`, `lensprice`) VALUES
-(5, 3, 8, '2024-09-10 09:40:32', 1, 'Zero Power Eyeglasses', 'Blue Filter+', 1000),
-(6, 3, 13, '2024-09-10 09:40:42', 1, NULL, NULL, NULL);
+(9, 3, 2, '2024-09-10 10:55:22', 1, NULL, NULL, NULL),
+(10, 3, 3, '2024-09-10 10:55:23', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -94,19 +94,23 @@ CREATE TABLE IF NOT EXISTS `order` (
   `placeddate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `amount` int(11) DEFAULT NULL,
   PRIMARY KEY (`orderid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `order`
 --
 
 INSERT INTO `order` (`orderid`, `productid`, `userid`, `quantity`, `powertype`, `lenstype`, `lensprice`, `status`, `placeddate`, `amount`) VALUES
-(1, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 15:02:07', 5800),
-(2, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 15:04:41', 6000),
-(3, 3, 3, 1, 'Zero Power Eyeglasses', 'Blue Filter+', 1000, 'Ordered', '2024-09-10 15:09:45', 6000),
-(4, 9, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 15:10:06', 5000),
-(5, 8, 3, 1, 'Zero Power Eyeglasses', 'Blue Filter+', 1000, 'Ordered', '2024-09-10 15:10:55', 6000),
-(6, 13, 3, 1, '', '', 0, 'Ordered', '2024-09-10 15:10:55', 2200);
+(1, 1, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 15:58:21', 5000),
+(2, 2, 3, 1, 'Single Vision/Powered Eyeglasses', 'Basic', 800, 'Ordered', '2024-09-10 16:01:10', 5800),
+(3, 2, 3, 1, 'Bifocal/Progressive Eyeglasses', 'Neo Digi', 2000, 'Ordered', '2024-09-10 16:20:51', 7000),
+(4, 2, 3, 1, '', '', 0, 'Ordered', '2024-09-10 16:20:51', 5000),
+(5, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:23:37', 5000),
+(6, 1, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:23:37', 5000),
+(7, 2, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:25:40', 5000),
+(8, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:25:40', 5000),
+(9, 2, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:27:17', 5000),
+(10, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:27:17', 5000);
 
 -- --------------------------------------------------------
 
@@ -132,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `sellingprice` int(255) DEFAULT NULL,
   `subcategory` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`productid`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product`
@@ -152,7 +156,14 @@ INSERT INTO `product` (`productid`, `name`, `detail`, `mrp`, `maincategory`, `im
 (11, 'JohnJacobs FullRim Aviator', '        Brand Name    		John Jacobs<br/>Product Type  		Eyeglasses<br/>Frame Type    		Full Rim<br/>Frame Shape   		Aviator<br/>Model No.     		JJ E13346<br/>Frame Size    		Wide?<br/>Frame Width   		139 mm<br/>Frame Dimensions	 53-19-145<br/>Frame colour		Black<br/>Weight			23 gm?<br/>Weight Group		Average?<br/>Material		Italian Acetate<br/>Frame Material		Italian Acetate?<br/>Temple Material		Italian Acetate?<br/>Prescription Type   	Bifocal / Progressive<br/>Frame Style  Premium<br/>Frame Style Secondary 	 Premium<br/>Collection 		 Rich Acetate<br/>Product Warranty 	 1 Year Manufacturer Warranty?<br/>Gender  Unisex<br/>Height  42 mm<br/>Condition  New<br/>Temple Colour  Black', 5700, 'men', '66e006b92055c.jpg', '66e006b920aa1.jpg', '66e006b920ff2.jpg', '66e006b92167b.jpg', 'transfer', 'show', '2024-09-10 08:43:37', 'medium', 4700, 'Aviator'),
 (12, 'John Jacobs Gunmetal Full Rim Aviator', '        Brand Name    		John Jacobs<br/>Product Type  		Eyeglasses<br/>Frame Type    		Full Rim<br/>Frame Shape   		Aviator<br/>Model No.     		JJ E13346<br/>Frame Size    		Wide?<br/>Frame Width   		139 mm<br/>Frame Dimensions	 53-19-145<br/>Frame colour		Black<br/>Weight			23 gm?<br/>Weight Group		Average?<br/>Material		Italian Acetate<br/>Frame Material		Italian Acetate?<br/>Temple Material		Italian Acetate?<br/>Prescription Type   	Bifocal / Progressive<br/>Frame Style  Premium<br/>Frame Style Secondary 	 Premium<br/>Collection 		 Rich Acetate<br/>Product Warranty 	 1 Year Manufacturer Warranty?<br/>Gender  Unisex<br/>Height  42 mm<br/>Condition  New<br/>Temple Colour  Black', 5000, 'men', '66e008d80f78a.jpg', '66e008d80ff2a.jpg', '66e008d810637.jpg', '66e008d810b8b.jpg', 'gold', 'show', '2024-09-10 08:52:40', 'medium', 2200, 'Aviator'),
 (13, 'John Jacobs Gunmetal Full Rim Aviator', '        Brand Name    		John Jacobs<br/>Product Type  		Eyeglasses<br/>Frame Type    		Full Rim<br/>Frame Shape   		Aviator<br/>Model No.     		JJ E13346<br/>Frame Size    		Wide?<br/>Frame Width   		139 mm<br/>Frame Dimensions	 53-19-145<br/>Frame colour		Black<br/>Weight			23 gm?<br/>Weight Group		Average?<br/>Material		Italian Acetate<br/>Frame Material		Italian Acetate?<br/>Temple Material		Italian Acetate?<br/>Prescription Type   	Bifocal / Progressive<br/>Frame Style  Premium<br/>Frame Style Secondary 	 Premium<br/>Collection 		 Rich Acetate<br/>Product Warranty 	 1 Year Manufacturer Warranty?<br/>Gender  Unisex<br/>Height  42 mm<br/>Condition  New<br/>Temple Colour  Black', 5000, 'men', '66e008d811d77.jpg', '66e008d8122a4.jpg', '66e008d81276f.jpg', '66e008d812c3a.jpg', 'Black', 'show', '2024-09-10 08:52:40', 'medium', 2200, 'Aviator'),
-(14, 'John Jacobs Silver Rimless Aviator', '        Brand Name    		John Jacobs<br/>Product Type  		Eyeglasses<br/>Frame Type    		Full Rim<br/>Frame Shape   		Aviator<br/>Model No.     		JJ E13346<br/>Frame Size    		Wide?<br/>Frame Width   		139 mm<br/>Frame Dimensions	 53-19-145<br/>Frame colour		Black<br/>Weight			23 gm?<br/>Weight Group		Average?<br/>Material		Italian Acetate<br/>Frame Material		Italian Acetate?<br/>Temple Material		Italian Acetate?<br/>Prescription Type   	Bifocal / Progressive<br/>Frame Style  Premium<br/>Frame Style Secondary 	 Premium<br/>Collection 		 Rich Acetate<br/>Product Warranty 	 1 Year Manufacturer Warranty?<br/>Gender  Unisex<br/>Height  42 mm<br/>Condition  New<br/>Temple Colour  Black', 5000, 'men', '66e009b4b2ced.jpg', '66e009b4b33cb.jpg', '66e009b4b3a42.jpg', '66e009b4b4097.jpg', 'silver', 'show', '2024-09-10 08:56:20', 'narrow', 4500, 'Aviator');
+(14, 'John Jacobs Silver Rimless Aviator', '        Brand Name    		John Jacobs<br/>Product Type  		Eyeglasses<br/>Frame Type    		Full Rim<br/>Frame Shape   		Aviator<br/>Model No.     		JJ E13346<br/>Frame Size    		Wide?<br/>Frame Width   		139 mm<br/>Frame Dimensions	 53-19-145<br/>Frame colour		Black<br/>Weight			23 gm?<br/>Weight Group		Average?<br/>Material		Italian Acetate<br/>Frame Material		Italian Acetate?<br/>Temple Material		Italian Acetate?<br/>Prescription Type   	Bifocal / Progressive<br/>Frame Style  Premium<br/>Frame Style Secondary 	 Premium<br/>Collection 		 Rich Acetate<br/>Product Warranty 	 1 Year Manufacturer Warranty?<br/>Gender  Unisex<br/>Height  42 mm<br/>Condition  New<br/>Temple Colour  Black', 5000, 'men', '66e009b4b2ced.jpg', '66e009b4b33cb.jpg', '66e009b4b3a42.jpg', '66e009b4b4097.jpg', 'silver', 'show', '2024-09-10 08:56:20', 'narrow', 4500, 'Aviator'),
+(15, 'Vincent Chase Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame 			TypeFull Rim<br/>Frame 			ShapeGeometric<br/>Model No.		VC E14977<br/>Frame Size	Medium?<br/>Frame 			Width133 mm<br/>Frame 			Dimensions49-20-135<br/>Frame 			colourBrown Transparent<br/>Weight			20 gm?<br/>Weight 			GroupLight?<br/>Material		Cellulose Acetate & Stainless Steel<br/>Frame 			MaterialCellulose Acetate?<br/>Temple 			MaterialStainless Steel?<br/>Prescription		 TypeBifocal / Progressive<br/>Frame 				StyleStandard<br/>Frame Style		 SecondaryYouth<br/>Collection		Blend Edit<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender	Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Silver Brown<br/>', 3500, 'men', '66e15a0b17b62.jpg', '66e15a0b17ea0.jpg', '66e15a0b18227.jpg', '66e15a0b18564.jpg', 'brown', 'show', '2024-09-11 08:51:23', 'medium', 2000, 'Geometric'),
+(16, 'Vincent Chase Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame 			TypeFull Rim<br/>Frame 			ShapeGeometric<br/>Model No.		VC E14977<br/>Frame Size		Medium?<br/>Frame 			Width133 mm<br/>Frame 			Dimensions49-20-135<br/>Frame 			colourBrown Transparent<br/>Weight			20 gm?<br/>Weight 			GroupLight?<br/>Material		Cellulose Acetate & Stainless Steel<br/>Frame 			MaterialCellulose Acetate?<br/>Temple 			MaterialStainless Steel?<br/>Prescription		 TypeBifocal / Progressive<br/>Frame 				StyleStandard<br/>Frame Style		 SecondaryYouth<br/>Collection		Blend Edit<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender	Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Silver Brown<br/>', 3500, 'men', '66e15a0b197ec.jpg', '66e15a0b19b76.jpg', '66e15a0b19ebf.jpg', '66e15a0b1a1c9.jpg', 'pink', 'show', '2024-09-11 08:51:23', 'medium', 2000, 'Geometric'),
+(17, 'Vincent Chase Brown Demi Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		Wide?<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 3500, 'men', '66e15c200ed07.jpg', '66e15c200f06c.jpg', '66e15c200f363.jpg', '66e15c200f62d.jpg', 'brown', 'show', '2024-09-11 09:00:16', 'large', 2000, 'Geometric'),
+(18, ' Vincent Chase  Transparent Full Rim Geometric  ', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		medium<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 5000, 'men', '66e15d4b53be9.jpg', '66e15d4b53f20.jpg', '66e15d4b541d8.jpg', '66e15d4b54587.jpg', 'Grey Transparent ', 'show', '2024-09-11 09:05:15', 'medium', 2500, 'Geometric'),
+(19, 'Lenskart Air  Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		Wide?<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 5000, 'men', '66e16014d0f95.jpg', '66e16014d1572.jpg', '66e16014d1a85.jpg', '66e16014d23e7.jpg', 'gray', 'show', '2024-09-11 09:17:08', 'medium', 2500, 'Geometric'),
+(20, 'Lenskart Air  Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		Wide?<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 5000, 'men', '66e16014d2f9f.jpg', '66e16014d32fc.jpg', '66e16014d35b9.jpg', '66e16014d385a.jpg', 'Blue', 'show', '2024-09-11 09:17:08', 'medium', 2500, 'Geometric'),
+(21, 'Lenskart Air  Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		Wide?<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 5000, 'men', '66e16014d4207.jpg', '66e16014d4625.jpg', '66e16014d49d2.jpg', '66e16014d4cca.jpg', 'green', 'show', '2024-09-11 09:17:08', 'medium', 2500, 'Geometric');
 
 -- --------------------------------------------------------
 
@@ -235,8 +246,8 @@ CREATE TABLE IF NOT EXISTS `userprescription` (
 --
 
 INSERT INTO `userprescription` (`prescriptionid`, `orderid`, `userid`, `productid`, `leftSPH`, `rightSPH`, `leftCYL`, `rightCYL`, `leftAXIS`, `rightAXIS`, `leftADD`, `rightADD`) VALUES
-(1, 1, 3, 3, -0.25, -0.25, -0.25, -0.25, 0, 0, 0, 0),
-(2, 5, 3, 8, -0.5, -0.5, 0, 0, 0, 0, 0, 0);
+(1, 2, 3, 2, 0, -0.25, 0, 0, 0, 0, 0, 0),
+(2, 2, 3, 2, -0.5, -0.25, 0, 0, 0, 0, 0, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

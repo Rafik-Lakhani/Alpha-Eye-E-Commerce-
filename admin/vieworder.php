@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet/vieworder.css">
-    <title>User Detail | Admin</title>
+    <title>Order Detail | Admin</title>
 </head>
 <body>
     <div class="main">
@@ -108,7 +108,7 @@
                         <select name="orderstatus" id="status">
                             <option value="ordered">Ordered</option>
                             <option value="shipping">Shipping</option>
-                            <option value="delivery">Out Delivery</option>
+                            <option value="out delivery">Out Delivery</option>
                             <option value="delivered">Delivered</option>
                             <option value="cancel">Cancel</option>
                         </select>
