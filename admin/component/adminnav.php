@@ -46,9 +46,12 @@
        
         </div>
         <div class="bottom-nav">
-            <button><a href="../logout.php">
-            <i class="ri-logout-circle-line"></i>
-            </a>Logout</button>
+            <a href="../logout.php">
+                <button>
+                    <i class="ri-logout-circle-line"></i>
+                    Logout
+                </button>
+            </a>
         </div>
     </div>
 </nav>

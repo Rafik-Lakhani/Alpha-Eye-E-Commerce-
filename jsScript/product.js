@@ -9,18 +9,6 @@ var mainimg= document.querySelector('#main-img');
             document.querySelector('.box').style.display='block';
         }
 
-        // document.querySelectorAll('.close').addEventListener("click",()=>{
-        //     document.querySelector('.box').style.display='none';
-        // });
-
-        const cbox = document.querySelectorAll(".close");
-        for (let i = 0; i < cbox.length; i++) {
-            console.log(i);
-            cbox[i].addEventListener('click', function() {
-                document.querySelector('.box').style.display='none';
-            });
-        }
-        // cbox.addEventListener("click", close, false);
 
 
 
@@ -66,7 +54,7 @@ var mainimg= document.querySelector('#main-img');
                         </div>
 
                         <div class="type-lense2" onclick="addlens(2)">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <img src="assets/staticimg/blue_tech_single_low.webp" alt="zero power image">
                             <div class="detail-name2">
                                 <div>
                                     <h3>BLUE TECH +</h3>
@@ -87,7 +75,7 @@ var mainimg= document.querySelector('#main-img');
                     else if(selectpower=="Zero Power Eyeglasses"){
                         document.querySelector(`.select-lenses3`).innerHTML+=`
                          <div class="type-lense2" onclick="addlens(3)">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <img src="assets/staticimg/blue_tech_biofocal.webp" alt="zero power image">
                             <div class="detail-name2">
                                 <div>
                                     <h3>Blue Filter+</h3>
@@ -108,7 +96,7 @@ var mainimg= document.querySelector('#main-img');
                     else if(selectpower=="Bifocal/Progressive Eyeglasses"){
                         document.querySelector(`.select-lenses3`).innerHTML+=`
                          <div class="type-lense2" onclick="addlens(4)">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <img src="assets/staticimg/biofocal.png" alt="zero power image">
                             <div class="detail-name2">
                                 <div>
                                     <h3>Neo Digi</h3>
@@ -125,7 +113,7 @@ var mainimg= document.querySelector('#main-img');
                         </div>
 
                          <div class="type-lense2" onclick="addlens(5)">
-                            <img src="assets/staticimg/basic_single_low.webp" alt="zero power image">
+                            <img src="assets/staticimg/neo_digi.webp" alt="zero power image">
                             <div class="detail-name2">
                                 <div>
                                     <h3>Neo Digi with Anti Reflect</h3>

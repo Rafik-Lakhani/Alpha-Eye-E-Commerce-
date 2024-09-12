@@ -48,7 +48,7 @@ html,body{
     /* background-color: red; */
 }
 
-.top-sec button{
+.top-sec a button{
     background-color: #0046FE;
     color: #fff;
     border: none;
@@ -56,19 +56,19 @@ html,body{
     border-radius: 5px;
     margin-right: 20px;
 }
-.top-sec button a{
+.top-sec a button {
     color: #fff;
     text-decoration: none;
 }
 
-.top-sec button:hover ,.top-sec button:hover a{
+.top-sec a button:hover ,.top-sec a:hover button{
     /* color: #0046FE; */
     background-color: #fff;
     /* border: 2px solid #0046FE; */
     color: #0046FE;
 }
 
-.top-sec button:hover{
+.top-sec a button:hover{
     border: 2px solid #0046FE;
 }
 

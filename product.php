@@ -124,7 +124,6 @@
                 </div>
 
                 <div class="select-lenses3">
-                    <button class="close"><i class="ri-close-circle-line"></i></button>
                     <h1>Select Lenses Type</h1>
                 </div>
 

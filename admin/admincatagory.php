@@ -18,7 +18,7 @@
         <div class="deshbord">
           <div class="top-sec">
             <h1>Categories</h1>
-            <button><a href="addcategory.php">Add</a></button>
+            <a href="addcategory.php"><button>Add</button></a>
           </div>
           <h2 class="cat-heading"><i class="ri-men-line"></i>MEN categories section</h2>
           <div class="boxes">

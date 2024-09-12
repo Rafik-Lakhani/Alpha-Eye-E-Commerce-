@@ -62,8 +62,8 @@
         <!-- table and heading -->
         <div class="document">
             <div class="top-hadding">
-                <h1>Product</h1>
-                <button><a href="addproduct.php">Add</a></button>
+                <h1>All Product</h1>
+                <a href="addproduct.php"><button>Add</button></a>
             </div>
 
         <div class="divder"></div>

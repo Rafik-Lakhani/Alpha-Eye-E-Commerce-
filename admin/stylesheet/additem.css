@@ -75,9 +75,10 @@ html,body{
 .top-hadding h1{
     color:black
 }
-.top-hadding button{
+.top-hadding a button{
     background-color: #0046FE;
      border: none;
+     color: #fff;
     padding: 10px 25px; 
     border-radius: 5px;
     margin-right: 15px;
@@ -87,12 +88,12 @@ html,body{
     color:white;
  }
 
-.top-hadding button:hover ,.top-hadding button:hover a{
+.top-hadding a button:hover ,.top-hadding a:hover button {
     color: #0046FE;    
     background-color: #fff;
 
 } 
-.top-hadding button:hover {
+.top-hadding a button:hover {
     color: #0046FE;
     border:2px solid #0046FE;
     background-color: #fff;
