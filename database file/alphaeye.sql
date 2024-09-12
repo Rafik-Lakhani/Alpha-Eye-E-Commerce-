@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Sep 12, 2024 at 10:40 AM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Host: 127.0.0.1
+-- Generation Time: Sep 12, 2024 at 01:34 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,18 +27,16 @@ SET time_zone = "+00:00";
 -- Table structure for table `cart`
 --
 
-DROP TABLE IF EXISTS `cart`;
-CREATE TABLE IF NOT EXISTS `cart` (
-  `cartid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cart` (
+  `cartid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `productid` int(11) NOT NULL,
-  `addingtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `quantity` int(11) DEFAULT '1',
+  `addingtime` timestamp NOT NULL DEFAULT current_timestamp(),
+  `quantity` int(11) DEFAULT 1,
   `powertype` varchar(255) DEFAULT NULL,
   `lenstype` varchar(255) DEFAULT NULL,
-  `lensprice` int(11) DEFAULT NULL,
-  PRIMARY KEY (`cartid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+  `lensprice` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cart`
@@ -55,16 +52,14 @@ INSERT INTO `cart` (`cartid`, `userid`, `productid`, `addingtime`, `quantity`, `
 -- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `categories`;
-CREATE TABLE IF NOT EXISTS `categories` (
-  `catid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `categories` (
+  `catid` int(11) NOT NULL,
   `men` varchar(255) DEFAULT NULL,
   `women` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT 'hidden',
   `setboth` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`catid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `categories`
@@ -81,20 +76,18 @@ INSERT INTO `categories` (`catid`, `men`, `women`, `status`, `setboth`, `image`)
 -- Table structure for table `order`
 --
 
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE IF NOT EXISTS `order` (
-  `orderid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `order` (
+  `orderid` int(11) NOT NULL,
   `productid` int(11) DEFAULT NULL,
   `userid` int(11) DEFAULT NULL,
-  `quantity` int(11) NOT NULL DEFAULT '1',
+  `quantity` int(11) NOT NULL DEFAULT 1,
   `powertype` varchar(255) DEFAULT NULL,
   `lenstype` varchar(255) DEFAULT NULL,
   `lensprice` int(11) DEFAULT NULL,
   `status` varchar(255) NOT NULL DEFAULT 'Ordered',
-  `placeddate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `amount` int(11) DEFAULT NULL,
-  PRIMARY KEY (`orderid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+  `placeddate` datetime NOT NULL DEFAULT current_timestamp(),
+  `amount` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `order`
@@ -110,7 +103,8 @@ INSERT INTO `order` (`orderid`, `productid`, `userid`, `quantity`, `powertype`, 
 (7, 2, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:25:40', 5000),
 (8, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:25:40', 5000),
 (9, 2, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:27:17', 5000),
-(10, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:27:17', 5000);
+(10, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:27:17', 5000),
+(11, 18, 4, 1, 'Bifocal/Progressive Eyeglasses', 'Neo Digi with Anti Reflect', 2500, 'Ordered', '2024-09-12 16:25:06', 5000);
 
 -- --------------------------------------------------------
 
@@ -118,12 +112,11 @@ INSERT INTO `order` (`orderid`, `productid`, `userid`, `quantity`, `powertype`, 
 -- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `product`;
-CREATE TABLE IF NOT EXISTS `product` (
-  `productid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `product` (
+  `productid` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `detail` longtext,
-  `mrp` int(11) NOT NULL DEFAULT '0',
+  `detail` longtext DEFAULT NULL,
+  `mrp` int(11) NOT NULL DEFAULT 0,
   `maincategory` varchar(255) DEFAULT NULL,
   `img1` varchar(255) DEFAULT NULL,
   `img2` varchar(255) DEFAULT NULL,
@@ -131,12 +124,11 @@ CREATE TABLE IF NOT EXISTS `product` (
   `img4` varchar(255) DEFAULT NULL,
   `color` varchar(255) DEFAULT NULL,
   `status` varchar(255) NOT NULL DEFAULT 'show',
-  `addingdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `addingdate` timestamp NOT NULL DEFAULT current_timestamp(),
   `size` varchar(20) DEFAULT 'medium',
   `sellingprice` int(255) DEFAULT NULL,
-  `subcategory` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`productid`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
+  `subcategory` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
@@ -171,17 +163,15 @@ INSERT INTO `product` (`productid`, `name`, `detail`, `mrp`, `maincategory`, `im
 -- Table structure for table `useraddres`
 --
 
-DROP TABLE IF EXISTS `useraddres`;
-CREATE TABLE IF NOT EXISTS `useraddres` (
+CREATE TABLE `useraddres` (
   `userid` int(11) DEFAULT NULL,
   `Phonenumber` int(10) DEFAULT NULL,
   `street` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `state` varchar(255) DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
-  `pincode` int(6) DEFAULT NULL,
-  UNIQUE KEY `userid` (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `pincode` int(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `useraddres`
@@ -189,7 +179,8 @@ CREATE TABLE IF NOT EXISTS `useraddres` (
 
 INSERT INTO `useraddres` (`userid`, `Phonenumber`, `street`, `city`, `state`, `country`, `pincode`) VALUES
 (1, 123456789, 'luharstreet', 'wadhwan', 'wadwan', 'india', 363030),
-(3, 123456787, '11', '11', '11', '11', 11);
+(3, 123456787, '11', '11', '11', '11', 11),
+(4, 123, '1223', '1', '1', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -197,26 +188,26 @@ INSERT INTO `useraddres` (`userid`, `Phonenumber`, `street`, `city`, `state`, `c
 -- Table structure for table `userdata`
 --
 
-DROP TABLE IF EXISTS `userdata`;
-CREATE TABLE IF NOT EXISTS `userdata` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `userdata` (
+  `id` int(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   `useremail` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT '0',
-  `joindate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `useremail` (`useremail`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  `status` tinyint(1) DEFAULT 0,
+  `joindate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `userdata`
 --
 
 INSERT INTO `userdata` (`id`, `username`, `useremail`, `password`, `status`, `joindate`) VALUES
-(1, 'harsh', 'harsh@gmail.com', '$2y$10$bHAxgiI4iKWr3yAUFK2lX.SFm9Us46kArzr8pkCriJUf8YBeBAADu', 1, '2024-09-08 08:58:32'),
+(1, 'harsh', 'harsh@gmail.com', '$2y$10$bHAxgiI4iKWr3yAUFK2lX.SFm9Us46kArzr8pkCriJUf8YBeBAADu', 0, '2024-09-08 08:58:32'),
 (2, 'rafik', 'rafik1@gmail.com', '$2y$10$LxvIFEvcI34MIzl2GQ4N6ODHlbC3xLXnJ6yjD37v9pw5bi7c9Qt1y', 0, '2024-09-08 08:59:40'),
-(3, 'user', 'user1@gmail.com', '$2y$10$PoMx/QTi123Wjb7HQ8J0qO3ayitH2J5x/aB1BqA98SK57GjnPPXXK', 0, '2024-09-10 07:54:37');
+(3, 'user', 'user1@gmail.com', '$2y$10$PoMx/QTi123Wjb7HQ8J0qO3ayitH2J5x/aB1BqA98SK57GjnPPXXK', 0, '2024-09-10 07:54:37'),
+(4, 'rafik', 'lakhanirafik111@gmail.com', '$2y$10$Az7f1XCtFprGfB93k0GSrOmC9rTNlByPKsUzabIVSHvyWMJOLkZAe', 0, '2024-09-12 10:54:14'),
+(5, 'user', 'user@gmail.com', '$2y$10$RCOqoXFcNCPzArj4HBly5OqlcxrNnWG3YKUrCw2Rx/BbMA9OI2cE2', 0, '2024-09-12 11:30:18'),
+(6, 'admin', 'admin@gmail.com', '$2y$10$rbS/ZDVhzzofvyOaT0MlJeW7Ury0pZJM/T6B9yWRXtpmpZs9gh1ay', 1, '2024-09-12 11:31:19');
 
 -- --------------------------------------------------------
 
@@ -224,9 +215,8 @@ INSERT INTO `userdata` (`id`, `username`, `useremail`, `password`, `status`, `jo
 -- Table structure for table `userprescription`
 --
 
-DROP TABLE IF EXISTS `userprescription`;
-CREATE TABLE IF NOT EXISTS `userprescription` (
-  `prescriptionid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `userprescription` (
+  `prescriptionid` int(11) NOT NULL,
   `orderid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `productid` int(11) NOT NULL,
@@ -237,9 +227,8 @@ CREATE TABLE IF NOT EXISTS `userprescription` (
   `leftAXIS` float NOT NULL,
   `rightAXIS` int(11) NOT NULL,
   `leftADD` float NOT NULL,
-  `rightADD` float NOT NULL,
-  PRIMARY KEY (`prescriptionid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  `rightADD` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `userprescription`
@@ -247,7 +236,95 @@ CREATE TABLE IF NOT EXISTS `userprescription` (
 
 INSERT INTO `userprescription` (`prescriptionid`, `orderid`, `userid`, `productid`, `leftSPH`, `rightSPH`, `leftCYL`, `rightCYL`, `leftAXIS`, `rightAXIS`, `leftADD`, `rightADD`) VALUES
 (1, 2, 3, 2, 0, -0.25, 0, 0, 0, 0, 0, 0),
-(2, 2, 3, 2, -0.5, -0.25, 0, 0, 0, 0, 0, 0);
+(2, 2, 3, 2, -0.5, -0.25, 0, 0, 0, 0, 0, 0),
+(3, 11, 4, 18, 0, -0.25, 0, 0, 0, 0, 0, 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cartid`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`catid`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`orderid`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`productid`);
+
+--
+-- Indexes for table `useraddres`
+--
+ALTER TABLE `useraddres`
+  ADD UNIQUE KEY `userid` (`userid`);
+
+--
+-- Indexes for table `userdata`
+--
+ALTER TABLE `userdata`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `useremail` (`useremail`);
+
+--
+-- Indexes for table `userprescription`
+--
+ALTER TABLE `userprescription`
+  ADD PRIMARY KEY (`prescriptionid`) USING BTREE;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `productid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `userdata`
+--
+ALTER TABLE `userdata`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `userprescription`
+--
+ALTER TABLE `userprescription`
+  MODIFY `prescriptionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

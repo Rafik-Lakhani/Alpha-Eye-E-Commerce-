@@ -21,7 +21,7 @@
 
             <div class="pass">
            <label for="Password" class="password">password</label>
-           <input type="text" name="password" id="password" placeholder="Enter Password" required>
+           <input type="password" name="password" id="password" placeholder="Enter Password" required>
            <i class="ri-eye-off-line" id="password-eye"></i>
             </div>
 
