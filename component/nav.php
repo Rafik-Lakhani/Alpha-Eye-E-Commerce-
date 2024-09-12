@@ -31,7 +31,7 @@
                                         <img src="assets/staticimg/Men-icon.jpg" alt="" srcset="" 
                                         id="men">
                                         <img src="assets/staticimg/Women-icon.jpg" alt="" srcset="" id="women">
-                                        <img src="assets/staticimg/men-icon.jpg" id="unsex" alt="" srcset="">
+                                        <img src="assets/staticimg/unisex.png" id="uniseximg" alt="" srcset="">
                                     </div>
                                     <div class="name-sec">
                                         <div class="men">

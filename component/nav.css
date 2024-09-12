@@ -232,6 +232,14 @@ nav{
     top: 400px;
 }
 
+#uniseximg{
+    background-color: rgb(182, 172, 172);
+    border-radius: 50%;
+    object-fit: fill;
+    width: 60px;
+    height: 60px;
+}
+
 .name-sec h3{
     font-size: 1.5rem;
     margin-bottom: 10px;

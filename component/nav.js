@@ -1,6 +1,6 @@
 var men=document.querySelector("#men"); //here in image select
 var women=document.querySelector("#women");
-var unisex=document.querySelector("#unsex");
+var unisex=document.querySelector("#uniseximg");
 
 var mendiv=document.querySelector(".men"); // here in div select
 var womendiv=document.querySelector(".women");
