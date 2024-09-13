@@ -147,7 +147,7 @@
         <div class="card-div">
                 <?php 
                     $fecthproduct ="SELECT * FROM product WHERE subcategory='$product[subcategory]'
-                    AND productid !=$product[productid] LIMIT 3";
+                    AND productid !=$product[productid] ORDER BY RAND() LIMIT 3";
                     $similerproduct = mysqli_query($con, $fecthproduct);
 
                     while($row = mysqli_fetch_assoc($similerproduct)){
