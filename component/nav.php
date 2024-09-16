@@ -82,7 +82,6 @@
                     else{
                         $email=$_SESSION['email'];
                         $select="select * from userdata where useremail='$email'";
-                 
                         $result=mysqli_query($con,$select);
                         $data=mysqli_fetch_assoc($result);
                         $char=str_split($data['username']);

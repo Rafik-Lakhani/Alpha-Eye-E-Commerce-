@@ -116,7 +116,7 @@ html,body{
 
 .box{
     color: #000;
-    background-color:#a7bffca8;
+    background-color:#ffe2e6;
     width: 17%;
     height: 120%;
     border-radius: 15px;
@@ -128,17 +128,17 @@ html,body{
     transition: all ease-in 0.25s;
 }
 
-.box:hover .icon i{
-    background-color:rgb(91, 172, 145);
+/* .box:hover .icon i{
+    background-color:#fa5a7c;
     color: black;
     border-color: white;
 }
 .box:hover{
     background-color: #3f61b6;
     
-}
+} */
 .icon i{
-    background-color: #3f61b665;
+    background-color: #fa5a7c;
 }
 .divder{
     
@@ -180,7 +180,7 @@ html,body{
     display: flex;
     justify-content: space-between;
     align-items: center;
- 
+    transition: all linear 0.3s;
 }
 .details{
     width: 30%;

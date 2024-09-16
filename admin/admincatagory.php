@@ -40,8 +40,8 @@
                                   </button>
                                   <div class="del">
                                     <h4><?php echo $row["status"]; ?></h4>
-                                    <h4><a href="editcategory.php?catid=<?php echo $row['catid']; ?>"><i class="ri-edit-line"></i></a></h4>
-                                    <a href="deletecategory.php?catid=<?php echo $row['catid']?>"><i class="ri-delete-bin-line"></i></a>
+                                    <h4><a href="editcategory.php?catid=<?php echo $row['catid']; ?>"><i class="ri-edit-2-fill"></i></a></h4>
+                                    <a href="deletecategory.php?catid=<?php echo $row['catid']?>"><i class="ri-delete-bin-6-fill"></i></a>
                                   </div>
                             </div>
                          </div>

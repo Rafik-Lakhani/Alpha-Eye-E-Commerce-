@@ -58,6 +58,7 @@ html,body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all linear 0.3s;
 }
 
 
@@ -87,6 +88,5 @@ html,body{
 .order-data:hover{
     background-color:#b9b5b5c2;
     box-shadow: 3px 5px #b5b1b1;
-    width:102%;
     align-self: center;
 }

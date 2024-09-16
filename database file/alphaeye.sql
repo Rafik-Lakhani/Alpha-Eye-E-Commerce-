@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2024 at 03:23 PM
+-- Generation Time: Sep 16, 2024 at 06:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -66,10 +66,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`catid`, `men`, `women`, `status`, `setboth`, `image`) VALUES
-(1, 'Aviator', NULL, 'show', NULL, '66c96fb8cdb7e.webp'),
-(2, 'Geometric', NULL, 'show', NULL, '66c96fc268615.webp'),
-(3, NULL, 'CatEye', 'show', NULL, '66c96fce0823a.webp'),
-(4, NULL, NULL, 'show', 'Wayfarer', '66e8270220c68.png');
+(1, 'Aviator', NULL, 'show', NULL, '66c96fb8cdb7e.png'),
+(2, 'Geometric', NULL, 'show', NULL, '66c96fc268615.png'),
+(3, NULL, 'CatEye', 'show', NULL, '66c96fce0823a.png'),
+(4, NULL, NULL, 'show', 'Wayfarer', '66e8270220c68.png'),
+(5, NULL, 'Round', 'show', NULL, '66e85ed5b3984.png');
 
 -- --------------------------------------------------------
 
@@ -157,10 +158,10 @@ INSERT INTO `product` (`productid`, `name`, `detail`, `mrp`, `maincategory`, `im
 (19, 'Lenskart Air  Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		Wide?<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 5000, 'men', '66e16014d0f95.jpg', '66e16014d1572.jpg', '66e16014d1a85.jpg', '66e16014d23e7.jpg', 'gray', 'show', '2024-09-11 09:17:08', 'medium', 2500, 'Geometric'),
 (20, 'Lenskart Air  Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		Wide?<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 5000, 'men', '66e16014d2f9f.jpg', '66e16014d32fc.jpg', '66e16014d35b9.jpg', '66e16014d385a.jpg', 'Blue', 'show', '2024-09-11 09:17:08', 'medium', 2500, 'Geometric'),
 (21, 'Lenskart Air  Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		Wide?<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 5000, 'men', '66e16014d4207.jpg', '66e16014d4625.jpg', '66e16014d49d2.jpg', '66e16014d4cca.jpg', 'green', 'show', '2024-09-11 09:17:08', 'medium', 2500, 'Geometric'),
-(22, 'Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45e9554.png', '66e82a45e97df.png', '66e82a45e99b4.png', '66e82a45e9b85.png', 'SkyBlue', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
-(23, 'Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ebc6b.png', '66e82a45ebf19.png', '66e82a45ec0f2.png', '66e82a45ec2e3.jpg', 'greenyellow', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
-(25, 'Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ed227.png', '66e82a45ed4b1.png', '66e82a45ed68f.png', '66e82a45ed819.png', 'pink', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
-(26, 'Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45edcfd.png', '66e82a45edf2f.png', '66e82a45ee130.png', '66e82a45ee3ac.png', 'Purple', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer');
+(22, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45e9554.png', '66e82a45e97df.png', '66e82a45e99b4.png', '66e82a45e9b85.png', 'SkyBlue', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
+(23, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ebc6b.png', '66e82a45ebf19.png', '66e82a45ec0f2.png', '66e82a45ec2e3.jpg', 'greenyellow', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
+(25, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ed227.png', '66e82a45ed4b1.png', '66e82a45ed68f.png', '66e82a45ed819.png', 'pink', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
+(26, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45edcfd.png', '66e82a45edf2f.png', '66e82a45ee130.png', '66e82a45ee3ac.png', 'Purple', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer');
 
 -- --------------------------------------------------------
 
@@ -305,7 +306,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `order`

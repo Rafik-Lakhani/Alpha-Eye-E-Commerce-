@@ -144,10 +144,10 @@ html,body{
    padding-left: 10px;
    height: 100%;
     display: flex;
-    color: #fff;
+    color: #000;
     flex-direction: column;
     border-left:2px solid white;
-    background-color: #0046FE;
+    background-color: #f4f5f6;
    align-items: start;
    justify-content: space-between;
    transition: all ease 0.4s;
@@ -185,8 +185,12 @@ html,body{
     margin-bottom: 5px;
 }
 
+.detail-div a {
+    text-decoration: none;
+}
+
 .detail-div i{
-    color: white;
+    color: #000;
     text-decoration: none;
 }
 

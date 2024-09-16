@@ -7,7 +7,7 @@
     <div class="nav_div">
         <div class="logo-center">
         <div class="top-nav">
-            <h1>Admin</h1>
+            <h1><i class="ri-user-settings-fill"></i>Admin</h1>
         </div>
         </div>
         <div class="center-nav">
@@ -48,7 +48,7 @@
         <div class="bottom-nav">
             <a href="../logout.php">
                 <button>
-                    <i class="ri-logout-circle-line"></i>
+                    <i class="ri-logout-box-line"></i>
                     Logout
                 </button>
             </a>

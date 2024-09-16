@@ -115,6 +115,7 @@ html,body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all linear 0.3s;
 }
 
 .details{
