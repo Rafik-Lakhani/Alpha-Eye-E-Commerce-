@@ -18,6 +18,13 @@ var mainimg= document.querySelector('#main-img');
         });
 
 
+        const cbox = document.querySelectorAll(".close");
+        for (let i = 0; i < cbox.length; i++) {
+            cbox[i].addEventListener('click', function() {
+                document.querySelector('.box').style.display='none';
+            });
+        }
+
 
         // document.querySelector("#btn-buy").addEventListener("click",()=>{
         //     console.log("dddd");
