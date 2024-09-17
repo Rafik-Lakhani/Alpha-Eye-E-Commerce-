@@ -57,7 +57,7 @@
                                             <h3>Unisex Category</h3>
                                             <?php while($unisex=mysqli_fetch_assoc($resultunisex)){?>
                                             <h5>
-                                                <a class="catlink" href="viewproduct.php?category=<?php echo $men['setboth']; ?>">
+                                                <a class="catlink" href="viewproduct.php?category=<?php echo $unisex['setboth']; ?>">
                                                     <?php echo $unisex['setboth']; ?></a>
                                             </h5>
                                             <?php }?>
