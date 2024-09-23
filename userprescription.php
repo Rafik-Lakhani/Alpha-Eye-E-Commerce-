@@ -172,11 +172,17 @@
                             <input type="number" min="0" value="00" name="rightaxis" max="180">
                                 <select name="rightadd" required id="">
                                     <option value="0">0.00</option>
-                                    <option value="1">1</option>
-                                    <option value="1">1</option>
-                                    <option value="1">1</option>
-                                    <option value="1">1</option>
-                                    <option value="1">1</option>
+                                    <option value="+0.50">+0.50</option>
+                                    <option value="+0.75">+0.75</option>
+                                    <option value="+1.00">+1.00</option>
+                                    <option value="+1.25">+1.25</option>
+                                    <option value="+1.50">+1.50</option>
+                                    <option value="+1.75">+1.75</option>
+                                    <option value="+2.00">+2.00</option>
+                                    <option value="+2.25">+2.25</option>
+                                    <option value="+2.50">+2.50</option>
+                                    <option value="+2.75">+2.75</option>
+                                    <option value="+3.00">+3.00</option>
                                 </select>
                             </div>
                             <div class="left-eye">
@@ -330,11 +336,17 @@
                                 <input type="number" required min="0" value="00" name="leftaxis" max="180">
                                 <select name="leftadd" id="" required>
                                     <option value="0.00">0.00</option>
-                                    <option value="1">1</option>
-                                    <option value="1">1</option>
-                                    <option value="1">1</option>
-                                    <option value="1">1</option>
-                                    <option value="1">1</option>
+                                    <option value="+0.50">+0.50</option>
+                                    <option value="+0.75">+0.75</option>
+                                    <option value="+1.00">+1.00</option>
+                                    <option value="+1.25">+1.25</option>
+                                    <option value="+1.50">+1.50</option>
+                                    <option value="+1.75">+1.75</option>
+                                    <option value="+2.00">+2.00</option>
+                                    <option value="+2.25">+2.25</option>
+                                    <option value="+2.50">+2.50</option>
+                                    <option value="+2.75">+2.75</option>
+                                    <option value="+3.00">+3.00</option>
                                 </select>
                             </div>
                         </div>

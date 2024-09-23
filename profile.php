@@ -47,7 +47,7 @@
                 </div>
                 <div>
                     <label for="email" >Your Email</label>
-                    <input type="email" id="email" required  name="email" placeholder="Enter Email" 
+                    <input type="email" id="email" required disabled  name="email" placeholder="Enter Email" 
                     value="<?= $data['useremail']; ?>">
                 </div>
                 <div>

@@ -30,11 +30,26 @@
         $row="women";
     }
 
-
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $catid = $_POST['catid'];
+        // here fetch category 
+        $select="select * from categories where catid=$catid";
+        $result=mysqli_query($con,$select);
+        $data=mysqli_fetch_assoc($result);
+
+        if(isset($data["men"])==false &&  isset($data["women"])==false) {
+            $row="setboth";
+        }
+        elseif(isset($data["women"])==false && isset($data["setboth"])==false) {
+            $row="men";
+        }
+        else{
+            $row="women";
+        }
+
         $categoryname = $_POST['categoryname'];
 
-        if(isset($_FILES['file'])){
+        if(is_uploaded_file($_FILES['file']['tmp_name'])){
             $file=$_FILES['file'];
             deleteimg($data["image"]);//delete from only folder not database
             $filename=image($file);
@@ -50,15 +65,24 @@
             $checkbox=NULL;
         }
 
+        if(isset($_POST["categoryname"])){
+            $categoryname = $_POST['categoryname'];
+        }
+        else{
+            $categoryname = $data[$row];
+        }
+
+
+
         if($checkbox==NULL){
             $sql="UPDATE `categories` SET `$row`='$categoryname' ,`status`='show' , `image`='$filename' WHERE `catid`='$catid'";//here we update imgindatabase
             $result=mysqli_query($con,$sql);
-            header("Location:admincatagory.php");
+            // header("Location:admincatagory.php");
         }
         else{
             $sql="UPDATE `categories` SET `$row`='$categoryname' ,`status`='$checkbox' , `image`='$filename' WHERE `catid`='$catid' ";
             $result=mysqli_query($con,$sql);
-            header("Location:admincatagory.php");
+            // header("Location:admincatagory.php");
         }
 
     }
@@ -76,7 +100,8 @@
         <h1>Edit Category</h1>
         
         <label for="catname" class="label">Enter New Category name</label>
-        <input type="text" name="categoryname">
+        <input type="text" name="categoryname" value="<?php echo $data[$row]; ?>">
+        <input type="hidden" name="catid" value="<?= $catid; ?>">
 
         <div class="from-select">
         <label for="file">Select img</label>
@@ -89,7 +114,7 @@
         </div>
 
         <div class="submit">
-        <input type="submit" value="Add Category">
+        <input type="submit" value="Edit Category">
         </div>    
     </form>
     </div>
