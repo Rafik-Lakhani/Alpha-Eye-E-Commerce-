@@ -43,7 +43,7 @@
  <div class="form-div">
         <form method="post" enctype="multipart/form-data">
         <div class="close">
-        <a href="admincatagory.php">
+        <a href="additem.php">
             <i class="ri-close-fill close-icon"></i>
         </a>
         </div>

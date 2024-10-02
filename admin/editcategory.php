@@ -77,12 +77,12 @@
         if($checkbox==NULL){
             $sql="UPDATE `categories` SET `$row`='$categoryname' ,`status`='show' , `image`='$filename' WHERE `catid`='$catid'";//here we update imgindatabase
             $result=mysqli_query($con,$sql);
-            // header("Location:admincatagory.php");
+            header("Location:admincatagory.php");
         }
         else{
             $sql="UPDATE `categories` SET `$row`='$categoryname' ,`status`='$checkbox' , `image`='$filename' WHERE `catid`='$catid' ";
             $result=mysqli_query($con,$sql);
-            // header("Location:admincatagory.php");
+            header("Location:admincatagory.php");
         }
 
     }

@@ -20,11 +20,18 @@
         <div class="center-sec">
             <div class="heading">
                 <h1>Product All Detail</h1>
-                <button>
-                        <a href="deleteproduct.php?pid=<?php echo $productid ;?>">
+                <div>
+                    <a href="deleteproduct.php?pid=<?php echo $productid ;?>">
+                        <button>
                             <i class="ri-delete-bin-6-line"></i>
-                        </a>
-                </button>
+                        </button>
+                    </a>
+                    <a href="editproduct.php?pid=<?php echo $productid ;?>">
+                        <button>
+                            <i class="ri-edit-line"></i>
+                        </button>
+                    </a>
+                </div>
             </div>
             <?php
                 // get user data by id from database

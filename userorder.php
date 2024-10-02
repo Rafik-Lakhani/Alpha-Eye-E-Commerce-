@@ -42,7 +42,7 @@
                             <h4>Delivery Status: <?= $orderdata['status']?></h4>
                         </div>
                         <div class="price-sec">
-                            <h2>$<?= $orderdata['amount']?></h2>
+                            <h2>₹<?= $orderdata['amount']?></h2>
                         </div>
                     </div>
                 </div>

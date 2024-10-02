@@ -30,7 +30,6 @@ html body{
 
 
 .whowe-are{
-    margin-top:17px;
     width:100%;
     background-color: #fff;
     display: flex;
@@ -75,7 +74,8 @@ li{
 
 .img-2 img{
     width:100%;
-    padding-right: 20px;
+    padding-right: 100px;
+    height: 50vh;
 }
 
 .detail-sec{

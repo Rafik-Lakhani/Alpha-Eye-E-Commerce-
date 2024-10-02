@@ -40,26 +40,29 @@ html,body{
     padding-right: 20px;
 }
 
-.heading button{
+.heading div a button{
     background-color: #0046FE;
     color: #fff;
     border: none;
-    padding: 5px 15px;
+    padding: 6px 17px;
     border-radius: 5px;
     margin-right: 20px;
+    transition: all ease .3s;
+    font-size: 1rem;
 }
-.heading button a{
+.heading div a button a{
     color: #fff;
     text-decoration: none;
     font-size: 1.3rem;
+    transition: all ease .3s;
 }
 
-.heading button:hover ,.heading button:hover a{
+.heading div a button:hover ,.heading div a button:hover a{
     background-color: #fff;
     color: #0046FE;
 }
 
-.heading button:hover{
+.heading div a button:hover{
     border: 2px solid #0046FE;
 }
 
