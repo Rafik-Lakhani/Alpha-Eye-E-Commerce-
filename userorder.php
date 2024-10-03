@@ -39,7 +39,7 @@
                             <?php $date=strtotime($orderdata['placeddate'])?>
                             <h4>Order Date: <?= date('d-m-y',$date); ?></h4>
                             <h4>Quantity: <?= $orderdata['quantity']?></h4>
-                            <h4>Delivery Status: <?= $orderdata['status']?></h4>
+                            <h4>Delivery Status: <?= $orderdata['status']?> </h4>
                         </div>
                         <div class="price-sec">
                             <h2>₹<?= $orderdata['amount']?></h2>
