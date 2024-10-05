@@ -69,9 +69,7 @@
                 </ol>
             </div>
             <div class="right-nav">
-                <div class="search-div">
                     <i class="ri-search-line" id="search-icon"></i>
-                </div>
                 <?php
                     if(isset($_SESSION['email']) && isset($_SESSION['role'])){
                         $email=$_SESSION['email'];

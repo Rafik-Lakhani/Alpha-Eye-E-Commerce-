@@ -70,7 +70,7 @@ nav{
 }
 
 .right-nav{
-    width: 15%;
+    width: 6%;
     display:flex;
     justify-content:space-around;
     align-items: center;
@@ -78,26 +78,8 @@ nav{
     position: relative;
 }
 
-.right-nav .search-div input{
-    width: 100%;
-    padding:5px 7px;
-    border-radius:20px ;
-    background-color: transparent;
-    border: 2px solid #424874;
-    color: #424874;
-    position: relative;
-    display: none;
-    transition: all ease 2s;
-}
 
-.right-nav .search-div{
-    width: 70%;
-    position: relative;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
+
 
 #search-icon{
     /* position: absolute;
