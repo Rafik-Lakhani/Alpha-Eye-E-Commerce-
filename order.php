@@ -65,10 +65,15 @@ if(isset($_POST["userprescriptionpage"])){
         header("Location: cart.php");
         exit();
     }
-
+}
+else{
+    header("Location: cart.php");
+    exit();
 }
 
 
+
+// here only frame product add in order plase and after order conformations page
 if($_GET['type']=='onlyframe'){
 
     if(isset($_SESSION['email'])&& isset($_SESSION['role'])){
@@ -108,6 +113,10 @@ if($_GET['type']=='onlyframe'){
         exit();
     }
 
+}
+else{
+    header("Location: cart.php");
+    exit();
 }
 
 
