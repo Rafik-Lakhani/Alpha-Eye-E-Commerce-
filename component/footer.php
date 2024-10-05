@@ -24,7 +24,7 @@
             <div class="section">
                 <h3>User Related</h3>
                 <a href="profile.php">Profile</a>
-                <a href="order.php">Order</a>
+                <a href="userorder.php">Order</a>
                 <a href="logout.php">Logout</a>
             </div>
             <div class="section">

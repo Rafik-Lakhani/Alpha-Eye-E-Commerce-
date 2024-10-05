@@ -13,6 +13,13 @@
         <?php include("component/nav.php");?>
         <?php include("config/dbconnect.php");?>
         <?php 
+            if(!isset($_SESSION['email'])&& !isset($_SESSION['role'])){
+                echo "<div style='text-align:center; margin-top: 50px;'>";
+                echo "<h1>Please Login to your account</h1>";
+                echo "<a href='singin.php' style='text-align:center; text-decoration:none; color:black;'>Login</a>";
+                echo "</div>";
+                exit();
+            }
         // Get order details from database using session email
         $useremail=$_SESSION['email'];
         $selectuser="select * from userdata where useremail='$useremail'";

@@ -47,8 +47,7 @@
                                             <h3>Women Category</h3>
                                             <?php while($women=mysqli_fetch_assoc($resultwomen)){?>
                                             <h5>
-                                                <a  class="catlink" href="viewproduct.php?category=<?php echo $women['women']; 
-                                                ?>">
+                                                <a  class="catlink" href="viewproduct.php?category=<?php echo $women['women']; ?>">
                                                     <?php echo $women['women']; ?></a>
                                             </h5>
                                             <?php }?>
@@ -74,12 +73,7 @@
                     <i class="ri-search-line" id="search-icon"></i>
                 </div>
                 <?php
-                    if(!isset($_SESSION['email'])){
-                        ?>
-                            <a href="singin.php"><i class="ri-user-line"></i></a>
-                    <?php
-                    }
-                    else{
+                    if(isset($_SESSION['email']) && isset($_SESSION['role'])){
                         $email=$_SESSION['email'];
                         $select="select * from userdata where useremail='$email'";
                         $result=mysqli_query($con,$select);
@@ -92,6 +86,11 @@
                                     <?php echo $char[0];?>
                                 </i>
                             </button>
+                    <?php
+                    }
+                    else{
+                        ?>
+                             <a href="singin.php"><i class="ri-user-line"></i></a>
                         <?php
                     }
                 ?>  
@@ -131,15 +130,3 @@
     </nav>
 
     <script src="component/nav.js"></script>
-    <script>
-        // const search=document.querySelector("#search-icon");
-        //     search.addEventListener("click",()=>{
-        //      search.style.position="absolute"
-        //      search.style.top="2px"
-        //      search.style.right="5px"
-        //      document.querySelector("#search-input").style.display="block";
-
-        //      document.querySelector("#search-icon").style.display="block";
-        //      document.querySelector("#search-icon").style.border="none";
-        // })
-    </script>
