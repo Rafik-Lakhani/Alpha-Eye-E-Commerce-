@@ -80,9 +80,9 @@
                         ?>
                             <button id="user-logo">
                                 <i class='ri-close-circle-line' id="userclose" style="display:none"></i>
-                                <i id='user-name-logo'>
+                                <span id='user-name-logo'>
                                     <?php echo $char[0];?>
-                                </i>
+                                </span>
                             </button>
                     <?php
                     }

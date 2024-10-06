@@ -41,7 +41,7 @@ if(isset($_POST['useraddress'])){
 }
 
 
-// here add store in check out page
+// here add address in check out page
 
 if(isset($_POST['address'])){
     session_start();

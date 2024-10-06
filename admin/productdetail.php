@@ -122,7 +122,7 @@
 
             <div class="username">
                 <h5>Product Details</h5>
-                <h2><?php echo $data['detail']; ?></h2>
+                <h2 id="productdetail"><?php echo $data['detail']; ?></h2>
                 <hr class="hrline">
             </div>
 

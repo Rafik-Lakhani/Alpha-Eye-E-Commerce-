@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2024 at 06:53 PM
+-- Generation Time: Oct 06, 2024 at 11:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -43,8 +43,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cartid`, `userid`, `productid`, `addingtime`, `quantity`, `powertype`, `lenstype`, `lensprice`) VALUES
-(9, 3, 2, '2024-09-10 10:55:22', 1, NULL, NULL, NULL),
-(10, 3, 3, '2024-09-10 10:55:23', 1, NULL, NULL, NULL);
+(2, 1, 19, '2024-10-06 09:49:08', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -66,11 +65,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`catid`, `men`, `women`, `status`, `setboth`, `image`) VALUES
-(1, 'Aviator', NULL, 'show', NULL, '66c96fb8cdb7e.png'),
-(2, 'Geometric', NULL, 'show', NULL, '66c96fc268615.png'),
-(3, NULL, 'CatEye', 'show', NULL, '66c96fce0823a.png'),
-(4, NULL, NULL, 'show', 'Wayfarer', '66e8270220c68.png'),
-(5, NULL, 'Round', 'show', NULL, '66e85ed5b3984.png');
+(1, 'Aviator', NULL, 'show', NULL, '66fbdf04ef7c1.png'),
+(2, 'Geometric', NULL, 'show', NULL, '66fbdf1377014.png'),
+(3, NULL, 'CatEye', 'show', NULL, '66fbde7311ea0.png'),
+(4, NULL, NULL, 'show', 'Wayfarer', '66fbdeb290713.png'),
+(5, NULL, 'Round', 'show', NULL, '66fbde8d9b681.webp');
 
 -- --------------------------------------------------------
 
@@ -96,17 +95,7 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`orderid`, `productid`, `userid`, `quantity`, `powertype`, `lenstype`, `lensprice`, `status`, `placeddate`, `amount`) VALUES
-(1, 1, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 15:58:21', 5000),
-(2, 2, 3, 1, 'Single Vision/Powered Eyeglasses', 'Basic', 800, 'Ordered', '2024-09-10 16:01:10', 5800),
-(3, 2, 3, 1, 'Bifocal/Progressive Eyeglasses', 'Neo Digi', 2000, 'Ordered', '2024-09-10 16:20:51', 7000),
-(4, 2, 3, 1, '', '', 0, 'Ordered', '2024-09-10 16:20:51', 5000),
-(5, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:23:37', 5000),
-(6, 1, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:23:37', 5000),
-(7, 2, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:25:40', 5000),
-(8, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:25:40', 5000),
-(9, 2, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:27:17', 5000),
-(10, 3, 3, 1, NULL, NULL, NULL, 'Ordered', '2024-09-10 16:27:17', 5000),
-(11, 18, 4, 1, 'Bifocal/Progressive Eyeglasses', 'Neo Digi with Anti Reflect', 2500, 'Ordered', '2024-09-12 16:25:06', 5000);
+(1, 22, 1, 1, 'Bifocal/Progressive Eyeglasses', 'Neo Digi with Anti Reflect', 2500, 'Ordered', '2024-10-06 15:18:49', 4500);
 
 -- --------------------------------------------------------
 
@@ -160,8 +149,8 @@ INSERT INTO `product` (`productid`, `name`, `detail`, `mrp`, `maincategory`, `im
 (21, 'Lenskart Air  Full Rim Geometric', '        Brand Name		Vincent Chase<br/>Product Type		Eyeglasses<br/>Frame Type		Full Rim<br/>Frame Shape		Geometric<br/>Model No.		VC E17229<br/>Frame Size		Wide?<br/>Frame Width		139 mm<br/>Frame Dimensions	53-17-145<br/>Frame colour		Brown Demi<br/>Weight			26 gm?<br/>Weight GroupAverage?	Material<br/>AcetateFrame 		Material<br/>Acetate?		Temple 	Material<br/>Acetate?Prescription 	TypeBifocal / Progressive<br/>Frame Style		Standard<br/>Frame Style 		SecondaryYouth<br/>Collection		Classic Acetate<br/>Product Warranty	1 Year Manufacturer Warranty?<br/>Gender			Unisex<br/>Height			41 mm<br/>Condition		New<br/>Temple Colour		Brown Demi<br/><br/>', 5000, 'men', '66e16014d4207.jpg', '66e16014d4625.jpg', '66e16014d49d2.jpg', '66e16014d4cca.jpg', 'green', 'show', '2024-09-11 09:17:08', 'medium', 2500, 'Geometric'),
 (22, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45e9554.png', '66e82a45e97df.png', '66e82a45e99b4.png', '66e82a45e9b85.png', 'SkyBlue', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
 (23, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ebc6b.png', '66e82a45ebf19.png', '66e82a45ec0f2.png', '66e82a45ec2e3.jpg', 'greenyellow', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
-(25, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ed227.png', '66e82a45ed4b1.png', '66e82a45ed68f.png', '66e82a45ed819.png', 'pink', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
-(26, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45edcfd.png', '66e82a45edf2f.png', '66e82a45ee130.png', '66e82a45ee3ac.png', 'Purple', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer');
+(24, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ed227.png', '66e82a45ed4b1.png', '66e82a45ed68f.png', '66e82a45ed819.png', 'pink', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
+(25, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45edcfd.png', '66e82a45edf2f.png', '66e82a45ee130.png', '66e82a45ee3ac.png', 'Purple', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer');
 
 -- --------------------------------------------------------
 
@@ -184,9 +173,7 @@ CREATE TABLE `useraddres` (
 --
 
 INSERT INTO `useraddres` (`userid`, `Phonenumber`, `street`, `city`, `state`, `country`, `pincode`) VALUES
-(1, 123456789, 'luharstreet', 'wadhwan', 'wadwan', 'india', 363030),
-(3, 123456787, '11', '11', '11', '11', 11),
-(4, 123, '1223', '1', '1', '1', 1);
+(1, 999999999, 'Millennium 2 Complex, Upasana Cir', 'Surendranagar', 'Gujarat', 'India', 363002);
 
 -- --------------------------------------------------------
 
@@ -208,12 +195,8 @@ CREATE TABLE `userdata` (
 --
 
 INSERT INTO `userdata` (`id`, `username`, `useremail`, `password`, `status`, `joindate`) VALUES
-(1, 'harsh', 'harsh@gmail.com', '$2y$10$bHAxgiI4iKWr3yAUFK2lX.SFm9Us46kArzr8pkCriJUf8YBeBAADu', 0, '2024-09-08 08:58:32'),
-(2, 'rafik', 'rafik1@gmail.com', '$2y$10$LxvIFEvcI34MIzl2GQ4N6ODHlbC3xLXnJ6yjD37v9pw5bi7c9Qt1y', 0, '2024-09-08 08:59:40'),
-(3, 'user', 'user1@gmail.com', '$2y$10$PoMx/QTi123Wjb7HQ8J0qO3ayitH2J5x/aB1BqA98SK57GjnPPXXK', 0, '2024-09-10 07:54:37'),
-(4, 'rafik', 'lakhanirafik111@gmail.com', '$2y$10$Az7f1XCtFprGfB93k0GSrOmC9rTNlByPKsUzabIVSHvyWMJOLkZAe', 0, '2024-09-12 10:54:14'),
-(5, 'user', 'user@gmail.com', '$2y$10$RCOqoXFcNCPzArj4HBly5OqlcxrNnWG3YKUrCw2Rx/BbMA9OI2cE2', 0, '2024-09-12 11:30:18'),
-(6, 'admin', 'admin@gmail.com', '$2y$10$rbS/ZDVhzzofvyOaT0MlJeW7Ury0pZJM/T6B9yWRXtpmpZs9gh1ay', 1, '2024-09-12 11:31:19');
+(1, 'user', 'user@gmail.com', '$2y$10$G18NhcW7znA1apU6MfwGd.0JmlnHq4LUFikypp.eO3PUS9CAYA5Ca', 0, '2024-10-06 09:19:25'),
+(2, 'admin', 'admin@gmail.com', '$2y$10$lGoIdSTeB4wqGTZtz.SpUeznOKnLHbIJaZMZiM5YUMp4mQnSo5ddO', 1, '2024-10-06 09:19:58');
 
 -- --------------------------------------------------------
 
@@ -241,9 +224,7 @@ CREATE TABLE `userprescription` (
 --
 
 INSERT INTO `userprescription` (`prescriptionid`, `orderid`, `userid`, `productid`, `leftSPH`, `rightSPH`, `leftCYL`, `rightCYL`, `leftAXIS`, `rightAXIS`, `leftADD`, `rightADD`) VALUES
-(1, 2, 3, 2, 0, -0.25, 0, 0, 0, 0, 0, 0),
-(2, 2, 3, 2, -0.5, -0.25, 0, 0, 0, 0, 0, 0),
-(3, 11, 4, 18, 0, -0.25, 0, 0, 0, 0, 0, 0);
+(1, 1, 1, 22, -0.25, -0.25, -0.5, -0.5, 90, 22, 0.75, 0.5);
 
 --
 -- Indexes for dumped tables
@@ -300,7 +281,7 @@ ALTER TABLE `userprescription`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -312,7 +293,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -324,13 +305,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `userprescription`
 --
 ALTER TABLE `userprescription`
-  MODIFY `prescriptionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `prescriptionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
