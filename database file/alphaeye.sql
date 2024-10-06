@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2024 at 11:49 AM
+-- Generation Time: Oct 06, 2024 at 04:12 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -150,7 +150,9 @@ INSERT INTO `product` (`productid`, `name`, `detail`, `mrp`, `maincategory`, `im
 (22, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45e9554.png', '66e82a45e97df.png', '66e82a45e99b4.png', '66e82a45e9b85.png', 'SkyBlue', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
 (23, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ebc6b.png', '66e82a45ebf19.png', '66e82a45ec0f2.png', '66e82a45ec2e3.jpg', 'greenyellow', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
 (24, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45ed227.png', '66e82a45ed4b1.png', '66e82a45ed68f.png', '66e82a45ed819.png', 'pink', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
-(25, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45edcfd.png', '66e82a45edf2f.png', '66e82a45ee130.png', '66e82a45ee3ac.png', 'Purple', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer');
+(25, 'Hustlr Full Rim Wayfarer', 'Product Type Eyeglasses<br/>Frame Type Full Rim <br/>Frame Shape Wayfarer<br/>Model No. LA E15417-W<br/>Frame Width 139mm<br/>Frame Dimensions 50-20-145<br/>Weight 16gm<br/>Weight Group Light<br/>Material TR90 (Flexible Light-Weight)<br/>Frame Material TR90<br/>Temple Material  TR90<br/>Prescription Type  Bifocal / Progressive<br/>Frame Style Light-Weigh', 2500, 'both', '66e82a45edcfd.png', '66e82a45edf2f.png', '66e82a45ee130.png', '66e82a45ee3ac.png', 'Purple', 'show', '2024-09-16 12:53:25', 'medium', 2000, 'Wayfarer'),
+(27, ' Transparent Full Rim Round', ' Brand Name Lenskart Air<br/>Product Type Eyeglasses<br/>Frame Type Full Rim<br/>Frame Shape Round<br/>Frame Width 132 mm<br/>Frame Dimensions 48-18-145<br/>Weight 13 gm<br/>Weight Group Light?<br/>Material Ultem<br/>Frame Material Ultem<br/>Temple Material Ultem?<br/>Prescription Type Bifocal / Progressive<br/>Frame Style Light-Weight<br/>Frame Style Secondary Standard<br/>Collection Air Flex<br/>Product Warranty 1 Year Manufacturer Warranty?<br/>Height 40 mm<br/>', 1600, 'women', '670297ed34378.png', '670297ed34baa.png', '670297ed34efd.png', '670297ed3513e.png', 'Violet', 'show', '2024-10-06 14:00:13', 'medium', 1200, 'Round'),
+(28, ' Transparent Full Rim Round', ' Brand Name Lenskart Air<br/>Product Type Eyeglasses<br/>Frame Type Full Rim<br/>Frame Shape Round<br/>Frame Width 132 mm<br/>Frame Dimensions 48-18-145<br/>Weight 13 gm<br/>Weight Group Light?<br/>Material Ultem<br/>Frame Material Ultem<br/>Temple Material Ultem?<br/>Prescription Type Bifocal / Progressive<br/>Frame Style Light-Weight<br/>Frame Style Secondary Standard<br/>Collection Air Flex<br/>Product Warranty 1 Year Manufacturer Warranty?<br/>Height 40 mm<br/>', 1600, 'women', '670297ed35c05.png', '670297ed35e56.png', '670297ed3604b.jpg', '670297ed36215.png', 'DodgerBlue', 'show', '2024-10-06 14:00:13', 'medium', 1200, 'Round');
 
 -- --------------------------------------------------------
 
@@ -299,7 +301,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `productid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `productid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `userdata`
